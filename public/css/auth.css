@@ -1,9 +1,44 @@
-
+/*
+    CSS Stylesheet fot the auth part of the web, main screen, login and register.
+*/
 
 body {
+    font-family: 'Montserrat';
+}
+
+#main-screen {
     background-image: url('../img/login.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Montserrat';
+}
+
+#nav-logo {
+    width: 150px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.title {
+    color: white;
+    font-weight: bold;
+}
+
+.main-title{
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.main-description {
+    color: white;
+    font-weight: lighter;
+}
+
+.main-btn {
+    margin-top: 50px;
+}
+
+.btn-izq {
+    margin-right: 30px;
 }

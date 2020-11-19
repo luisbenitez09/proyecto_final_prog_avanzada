@@ -11,9 +11,31 @@
     
     <title>BlockBuster 2</title>
 </head>
-<body>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">BlockBuster 2</span>
+<body id="main-screen" class="antialiased">
+    <nav class="navbar navbar ">
+        <img src="img/logo-ligth.svg" alt="BlockBuster2" id="nav-logo">
     </nav>
+    <div class="row">
+        <div class="col main-title">
+            <h1 class="title">Do you like Netflix? You'll love this.</h1>
+            <p class="main-description">We have all time best movies and the recent ones, 4k and available in all your devices. <br/>
+            Do you really need something else?</p>
+            @if (Route::has('login'))
+                <div class="main-btn">
+                    @auth
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-izq">Dashboard</button>
+                        <button type="button" class="btn btn-outline-danger btn-lg">Sing Out</button>
+                    @else
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-izq">Sing In</button>
+                        @if (Route::has('register'))
+                            <button type="button" class="btn btn-outline-warning btn-lg">Sing Up</button>
+                        @endif
+                    @endif 
+                </div>
+            @endif
+            
+            
+        </div>
+    </div>
 </body>
 </html>
