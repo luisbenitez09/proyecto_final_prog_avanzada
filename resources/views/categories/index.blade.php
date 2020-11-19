@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Movies') }}
+            {{ __('Categories') }}
         </h2>
     </x-slot>
 
@@ -12,22 +12,22 @@
             <table class="table table-bordered">
                     <thead>
                         <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Classification</th>
-                        <th scope="col">Minutes</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Movies</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if(isset($movies) && count($movies)>0)
-                        @foreach($movies as $movie)
+                        @if(isset($categories) && count($categories)>0)
+                        @foreach($categories as $category)
                         <tr>
-                        <th scope="row">{{ $movie->title }}</th>
-                        <td>{{ $movie->classification }}</td>
-                        <td>{{ $movie->minutes }}</td>
-                        <td>{{ $movie->year }}</td>
-                        <td>{{ $movie->category->name }}</td>
+                        <th scope="row">{{ $category->id }}</th>
+                        <td>{{ $category->name }}</td>
+                        <td>{{ $category->description }}</td>
+                        <td>{{ $category->created_at }}</td>
+                        <td>{{ count($category->movie) }}</td>
                         </tr>
                         @endforeach
                         @endif

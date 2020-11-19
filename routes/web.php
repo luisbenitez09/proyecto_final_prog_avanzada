@@ -25,5 +25,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/movies','MovieController@index');
 
+    Route::get('/categories','CategoryController@index');
+
 });
 
