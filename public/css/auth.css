@@ -9,7 +9,7 @@ body {
 }
 
 #main-screen {
-    background-image: url('../img/login.jpg');
+    background-image: url('../img/main-background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
