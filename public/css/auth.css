@@ -2,6 +2,8 @@
     CSS Stylesheet fot the auth part of the web, main screen, login and register.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
     font-family: 'Montserrat';
 }
@@ -42,3 +44,4 @@ body {
 .btn-izq {
     margin-right: 30px;
 }
+

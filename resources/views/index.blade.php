@@ -17,18 +17,23 @@
     </nav>
     <div class="row">
         <div class="col main-title">
-            <h1 class="title">Do you like Netflix? You'll love this.</h1>
+            <h1 class="title">Do you like Netflix? <strong>You'll love this.</strong></h1>
             <p class="main-description">We have all time best movies and the recent ones, 4k and available in all your devices. <br/>
             Do you really need something else?</p>
             @if (Route::has('login'))
                 <div class="main-btn">
                     @auth
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-izq">Dashboard</button>
-                        <button type="button" class="btn btn-outline-danger btn-lg">Sing Out</button>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-izq" onclick="location.href='{{ url('/dashboard') }}'">Dashboard</button>
+                            <button type="button" class="btn btn-outline-danger btn-lg" onclick="event.preventDefault();
+                                                                                        this.closest('form').submit();">Sign Out</button>
+                        </form>
+                        
                     @else
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-izq">Sing In</button>
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-izq" onclick="location.href='{{ url('login') }}'">Sign In</button>
                         @if (Route::has('register'))
-                            <button type="button" class="btn btn-outline-warning btn-lg">Sing Up</button>
+                            <button type="button" class="btn btn-outline-warning btn-lg" onclick="location.href='{{ url('register') }}'">Sing Up</button>
                         @endif
                     @endif 
                 </div>
