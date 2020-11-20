@@ -28,6 +28,10 @@
                     <input type="text" class="form-control" id="name" name="name" :value="old('name')" required autofocus>
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputLastname1">Your lastname...</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" :value="old('lastname')" required autofocus>
+                </div>
+                <div class="form-group">
                     <label for="exampleInputName1">Your email...</label>
                     <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
