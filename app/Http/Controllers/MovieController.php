@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -15,8 +16,9 @@ class MovieController extends Controller
     public function index()
     {
         $movies = Movie::with('category')->get();
+        $categories = Category::all();
 
-        return view('movies.index',compact('movies'));
+        return view('movies.index',compact('movies','categories'));   
     }
 
     /**
@@ -37,7 +39,26 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($movie = Movie::create($request->all())) {
+
+            if ($request->hasFile('cover_file')) {
+                
+                $file = $request->file('cover_file');
+                $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
+
+                $path = $request->file('cover_file')->storeAs(
+                    'img', $file_name
+                );
+
+                $movie->cover = $file_name;
+                $movie->save();
+
+
+            }
+
+            return redirect()->back();
+        }
+        return redirect()->back();
     }
 
     /**
@@ -57,9 +78,20 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movie)
+    public function get(Movie $movie)
     {
-        //
+        if ($movie) {
+            return response()->json([
+                'message' => 'Registro consultado correctamente',
+                'code' => '200',
+                'movie' => $movie
+            ]);
+        }
+        return response()->json([
+            'message' => 'Registro no encontrado',
+            'code' => '400',
+            'movie' => array()
+        ]);
     }
 
     /**
@@ -71,7 +103,27 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        if ($movie) {
+            if ($movie->update($request->all())) {
+
+                if ($request->hasFile('cover_file')) {
+                
+                    $file = $request->file('cover_file');
+                    $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
+
+                    $path = $request->file('cover_file')->storeAs(
+                        'img', $file_name
+                    );
+
+                    $movie->cover = $file_name;
+                    $movie->save(); 
+
+                }
+
+                return redirect()->back();
+            }
+        }
+        return redirect()->back();
     }
 
     /**
