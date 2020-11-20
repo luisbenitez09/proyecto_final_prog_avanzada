@@ -20,7 +20,7 @@
         <div class="col-lg-4 form-side">
             <form class="auth-form" method="POST" action="{{ route('login') }}">
                 @csrf
-                <img src="img/logo-ligth.svg" alt="BlockBuster2" id="form-logo">
+                <img src="img/logo.svg" alt="BlockBuster2" id="form-logo">
                 <h1>Welcome back.</h1>
                 <br>
                 <div class="form-group">

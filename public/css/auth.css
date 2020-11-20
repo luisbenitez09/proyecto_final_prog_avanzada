@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat'!important;
     background-color: #04102f!important;
 }
 
@@ -114,4 +114,15 @@ h1,h2,h3,h4,h5,h6,p,span,label {
         margin-left: 50px;
         margin-right: 50px;
     }
+}
+
+/* -------------------------    REGISTER SCREEN     --------------------------*/
+
+#form-logo-register {
+    width: 150px;
+    margin-bottom: 3vh;
+}
+
+.auth-form-regsiter {
+    margin-top: 5vh;
 }

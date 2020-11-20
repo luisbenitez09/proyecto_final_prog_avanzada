@@ -13,7 +13,7 @@
 </head>
 <body id="main-screen" class="antialiased">
     <nav class="navbar navbar ">
-        <img src="img/logo-ligth.svg" alt="BlockBuster2" id="nav-logo">
+        <img src="img/logo.svg" alt="BlockBuster2" id="nav-logo">
     </nav>
     <div class="row">
         <div class="col main-title">

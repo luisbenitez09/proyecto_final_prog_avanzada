@@ -15,42 +15,37 @@
 <body>
     <div class="row">
         <div class="col-6 poster">
-            <img src="img/img-login.png" alt="BlockBuster2" class="img-login">
+            <img src="img/img-register.png" alt="BlockBuster2" class="img-login">
         </div>
-        <div class="col-lg-4 form-side">
-            <form class="auth-form" method="POST" action="{{ route('register') }}">
+        <div class="col-lg-5 form-side">
+            <form class="auth-form-regsiter" method="POST" action="{{ route('register') }}">
                 @csrf
-                <img src="img/logo-ligth.svg" alt="BlockBuster2" id="form-logo">
-                <h1>Welcome friends.</h1>
+                
+                <h1>You are almost done</h1>
                 <br>
                 <div class="form-group">
-                    <label for="exampleInputName1">Your name...</label>
+                    <label for="exampleInputName1">First name</label>
                     <input type="text" class="form-control" id="name" name="name" :value="old('name')" required autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputLastname1">Your lastname...</label>
+                    <label for="exampleInputLastname1">Lastname</label>
                     <input type="text" class="form-control" id="lastname" name="lastname" :value="old('lastname')" required autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputName1">Your email...</label>
+                    <label for="exampleInputName1">Email</label>
                     <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus>
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Your password...</label>
+                    <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required autocomplete="new-password">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Confirm your password...</label>
+                    <label for="exampleInputPassword1">Confirm your password</label>
                     <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required autocomplete="new-password">
                 </div>
-                <div class="form-group">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-                </div>
-                <button type="submit" class="btn btn-blue btn-block">Register</button>
+                <button type="submit" class="btn btn-orange btn-block">Register</button>
                 <br>
+                <p>Already a member? <a class="blue-link" href="{{ route('login') }}">Sign In</a> </p>
             </form>
         </div>
     </div>
