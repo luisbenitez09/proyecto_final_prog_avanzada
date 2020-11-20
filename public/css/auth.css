@@ -6,8 +6,50 @@
 
 body {
     font-family: 'Montserrat';
+    background-color: #04102f!important;
 }
 
+h1,h2,h3,h4,h5,h6,p,span,label {
+    color: white;
+}
+
+.btn-blue {
+    background-color: #0f3fa9!important;
+    color: white!important;
+}
+
+.btn-blue:hover {
+    background-color: #0d50e1!important;
+}
+
+.btn-orange {
+    background-color: #ffa903!important;
+    color: white!important;
+}
+
+.btn-orange:hover {
+    background-color: #fec045!important;
+}
+
+.orange-link {
+    color: #ffa903;
+}
+
+.orange-link:hover {
+    color: #fec045;
+    text-decoration: none;
+}
+
+.blue-link {
+    color: #0f3fa9!important;
+}
+
+.blue-link:hover {
+    color: #0d50e1!important;
+    text-decoration: none;
+}
+
+/* -------------------------    MAIN SCREEN     --------------------------*/
 #main-screen {
     background-image: url('../img/main-background.png');
     background-repeat: no-repeat;
@@ -45,3 +87,31 @@ body {
     margin-right: 30px;
 }
 
+/* -------------------------    LOGIN SCREEN     --------------------------*/
+
+.auth-form {
+    margin-top: 10vh;
+}
+
+.img-login {
+    border-radius: 30px;
+    height: 93vh;
+    margin-left: 3%;
+    margin-top: 3vh;
+}
+
+#form-logo {
+    width: 200px;
+    margin-bottom: 7vh;
+}
+
+@media only screen and (max-width: 968px) {
+    .poster{
+        display: none;
+    }
+    .form-side {
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
