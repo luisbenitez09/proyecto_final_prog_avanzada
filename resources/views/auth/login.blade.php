@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -24,12 +25,12 @@
                 <br>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Your email...</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Your password...</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
                 </div>
                 <div class="form-group">
                     @if (Route::has('password.request'))
