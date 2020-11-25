@@ -1,5 +1,5 @@
 /*
-    CSS Stylesheet fot the auth part of the web, main screen, login and register.
+    CSS Stylesheet for the auth part of the web, main screen, login and register.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -126,3 +126,6 @@ h1,h2,h3,h4,h5,h6,p,span,label {
 .auth-form-regsiter {
     margin-top: 5vh;
 }
+
+/* -------------------------    Page     --------------------------*/
+
