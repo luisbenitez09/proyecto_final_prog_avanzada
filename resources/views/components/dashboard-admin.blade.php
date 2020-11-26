@@ -54,5 +54,41 @@
             </nav>
         </div>
 
-        <h1>Components</h1>
+        <div class="container dash-content">
+            <div class="card counters">
+                <div class="card-body">
+                    <div class="row" style="text-align: center">
+                        <div class="col">
+                            <button type="button" class="btn counter dark btn-danger">
+                                Categories <span class="badge badge-light">9</span>
+                                <span class="sr-only">Categories</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn counter btn-warning">
+                                Movies <span class="badge badge-light">23</span>
+                                <span class="sr-only">Movies</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn counter btn-primary">
+                                Users <span class="badge badge-light">40</span>
+                                <span class="sr-only">Users</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn counter btn-success">
+                                Loans <span class="badge badge-light">956</span>
+                                <span class="sr-only">Loans</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jumbotron radar-chart">
+                <canvas id="radarChart" class="area-radar"></canvas>
+            </div>
+            
+        </div>
+        
 </div>
