@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @endif
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard</title>
 </head>
-<body>
+<body id="body-pd">
 
     @if (Auth::user()->hasRole('User'))
     <!-- if is user -->
@@ -29,8 +28,7 @@
 
     @endif
 
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 </body>
