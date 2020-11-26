@@ -85,9 +85,17 @@
                     </div>
                 </div>
             </div>
-            <div class="jumbotron radar-chart">
-                <canvas id="radarChart" class="area-radar"></canvas>
+            <div class="container">
+               <div class="row">
+                    <div class="col-12 charts">
+                        <canvas id="radarChart" ></canvas>
+                    </div>
+                    <div class="col-12 charts">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div> 
             </div>
+            
             
         </div>
         
