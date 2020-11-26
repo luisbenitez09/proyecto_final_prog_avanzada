@@ -8,7 +8,7 @@
     --header-height: 3rem;
     --nav-width: 68px;
 
-    --first-color: #4723D9;
+    --first-color: #0F3FA9;
     --fisrt-color-light: #AFA5D9;
     --white-color: #F7F6FB;
     --body-font: 'Montserrat', sans-serif;
@@ -190,11 +190,11 @@ a{
   }
 
   .card-title{
-    color: black!important;
+    color: white!important;
   }
 
   .card-text{
-    color: black!important;
+    color: white!important;
   }
 
   .trending_movies{
@@ -204,5 +204,27 @@ a{
   .title_trending{
     margin-top: 10px;
   }
+
+  .cards_movie{
+    border-radius: 25px!important;
+    background-color: #12263f!important;
+    border: 0px!important;
+  }
+
+  .card-m{
+    background-color: #12263f!important;
+    border: 0px!important;
+  }
   
+  .card-mov{
+    border-radius: 25px!important;
+    background-color: #1d3b60!important;
+    border: 0px!important;
+    margin-top: 25px;
+  }
+
+  .img-c{
+    border-radius: 25px!important;
+  }
+
 }

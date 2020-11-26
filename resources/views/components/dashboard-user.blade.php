@@ -52,24 +52,32 @@
         <div class="container cards">
 			<div class="row">
 					<div class="col-sm">
-					<div class="card mb-3">
-						<img class="card-img-top" src="img/bob_ok.jpg" alt="Card image cap">
+					<div class="card mb-3 cards_movie">
+						<img class="card-img-top cards_movie" src="img/bob_ok.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
 						</div>
 						</div>
 					</div>
 					<div class="col-sm">
-					<div class="card mb-3">
-						<img class="card-img-top" src="img/bob_ok.jpg" alt="Card image cap">
+					<div class="card mb-3 cards_movie">
+						<img class="card-img-top cards_movie" src="img/bob_ok.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
 						</div>
 						</div>
 					</div>
 					<div class="col-sm">
-					<div class="card mb-3">
-						<img class="card-img-top" src="img/bob_ok.jpg" alt="Card image cap">
+					<div class="card mb-3 cards_movie">
+						<img class="card-img-top cards_movie" src="img/bob_ok.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+						</div>
+						</div>
+					</div>
+					<div class="col-sm">
+					<div class="card mb-3 cards_movie">
+						<img class="card-img-top cards_movie" src="img/bob_ok.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
 						</div>
@@ -85,7 +93,7 @@
 			  
 			  <div class="row trending_movies">
 				  <div class="col-sm">
-					<div class="card mb-3">
+					<div class="card mb-3 card-m">
 						<img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/A1t8xCe9jwL._AC_SY741_.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
@@ -93,7 +101,7 @@
 						</div>
 					</div>
 					<div class="col-sm">
-					<div class="card mb-3">
+					<div class="card mb-3 card-m">
 						<img class="card-img-top" src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2019/08/dama-vagabundo-2019-poster.jpg?itok=0uOGZduP" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
@@ -101,7 +109,7 @@
 						</div>
 					</div>
 					<div class="col-sm">
-					<div class="card mb-3">
+					<div class="card mb-3 card-m">
 						<img class="card-img-top" src="https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2?imbypass=on" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
@@ -110,7 +118,7 @@
 					</div>
 
 					<div class="col-sm">
-					<div class="card mb-3">
+					<div class="card mb-3 card-m">
 						<img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
@@ -119,7 +127,7 @@
 					</div>
 
 					<div class="col-sm">
-					<div class="card mb-3">
+					<div class="card mb-3 card-m">
 						<img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/d/d6/Beauty_and_the_Beast_2017_poster.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
@@ -127,17 +135,31 @@
 						</div>
 					</div>
 
+					<div class="card card-m" style="width: 18rem;">
+						<img class="card-img-top" src="https://i.blogs.es/45df5f/the-lion-king-taquilla-record-animacion/450_1000.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">Tras el asesinato de su padre, Simba, un joven león es apartado su reino y tendrá que descubrir con ayuda de amigos de la sabana 
+								africana el significado de la responsabilidad y la valentía.</p>
+						</div>
+						</div>
+
+			  </div>
+
+			  <div class="row title_trending">
+			  <div class="col-sm">
+				  <h4>Reviews</h4>
+			  </div>
 			  </div>
 
 			  <div class="row">
 				  <div class="col-sm">
-				  <div class="card mb-3" style="max-width: 540px">
+				  <div class="card mb-3 card-mov" style="max-width: 540px">
 						<div class="row g-0">
 							<div class="col-md-4">
 							<img
 								src="https://upload.wikimedia.org/wikipedia/en/d/d6/Beauty_and_the_Beast_2017_poster.jpg"
 								alt="..."
-								class="img-fluid"
+								class="img-fluid img-c"
 							/>
 							</div>
 							<div class="col-md-8">
@@ -155,6 +177,33 @@
 						</div>
 						</div>
 				  </div>
+
+				  <div class="col-sm">
+				  <div class="card mb-3 card-mov" style="max-width: 540px">
+						<div class="row g-0">
+							<div class="col-md-4">
+							<img
+								src="https://upload.wikimedia.org/wikipedia/en/d/d6/Beauty_and_the_Beast_2017_poster.jpg"
+								alt="..."
+								class="img-fluid img-c"
+							/>
+							</div>
+							<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title">Beauty and the beast </h5>
+								<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+								</p>
+								<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+								</p>
+							</div>
+							</div>
+						</div>
+						</div>
+				  </div>
+
 			  </div>
 	</div>
 </div>
