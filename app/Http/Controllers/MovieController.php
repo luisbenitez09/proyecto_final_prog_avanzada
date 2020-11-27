@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Auth;
 
 class MovieController extends Controller
 {
@@ -15,10 +16,17 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::with('category')->get();
-        $categories = Category::all();
-
-        return view('movies.index',compact('movies','categories'));   
+        if(Auth::user()->hasRole('User')) {
+            $movies = Movie::All();
+            return view ('movies.user', compact('movies'));
+        }
+        else if(Auth::user()->hasRole('Admin')) {
+            $movies = Movie::with('category')->get();
+            $categories = Category::All();
+            //$users = User::All();
+            //$loans = Loan::All();
+            return view ('movies.admin', compact('movies','categories'));
+        }   
     }
 
     /**
