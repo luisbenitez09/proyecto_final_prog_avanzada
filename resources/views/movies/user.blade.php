@@ -75,21 +75,24 @@
             </div>
             <div class="col-md-7 info_movie">
                 
-            <div class="card mb-3 i_movie" style="max-width: 1000px">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/03/dama-vagabundo-1898245.jpg"
-                                    alt="..." class="img-fluid i_img" />
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title card_title">Lady and the Tramp</h5>
-                                    <p class="card-text">.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="card mt-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/03/dama-vagabundo-1898245.jpg" class="img-fluid i_mov">
                     </div>
+                    <div class="col-md-5">
+                        <h2 class="card-title mt-2">Lady and the Tramp</h2>
+                        <p>hola</p>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-success">Rentar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
             </div>
         </div>
         <div class="container_movies">.</div>
