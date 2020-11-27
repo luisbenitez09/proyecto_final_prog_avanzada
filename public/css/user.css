@@ -10,7 +10,7 @@
 
     --first-color: #0F3FA9;
     --fisrt-color-light: #AFA5D9;
-    --white-color: #F7F6FB;
+    --white-color: #12263f;
     --body-font: 'Montserrat', sans-serif;
     --nomal-font-size: 1rem;
 
@@ -29,6 +29,10 @@ body {
     font-family: var(--body-font);
     font-size: var(--nomal-font-size);
     transition: .5s;
+}
+
+.body_movies{
+  background-color: black!important;
 }
 
 h1,h2,h3,h4,h5,p,span,label {
@@ -237,4 +241,36 @@ a{
     .card-desc {
       width: 100%;
     }
+  }
+
+  .c_movies{
+    margin-top: 80px;
+    width: 100% ;
+    background-color: yellowgreen!important;
+    background-image: url('../img/fondo_movies.jpg');
+    background-size: cover;
+    border-radius: 10px!important;
+  }
+
+  .info_movie{
+    height: 540px;
+    overflow-y: scroll;
+  }
+
+  .i_movie{
+    border-radius: 10px!important;
+    height: 120px;
+    margin-top: 20px;
+  }
+
+  .card_title{
+    color: black!important;
+    margin-left: -35px!important;
+    margin-top: -10px;
+    font-size: 16px;
+  }
+
+  .i_img{
+    border-radius: 10px 0px 0px 10px!important;
+    height: 120px!important;
   }
