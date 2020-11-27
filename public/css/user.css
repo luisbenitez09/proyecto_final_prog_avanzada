@@ -8,9 +8,9 @@
     --header-height: 3rem;
     --nav-width: 68px;
 
-    --first-color: #0F3FA9;
-    --fisrt-color-light: #AFA5D9;
-    --white-color: #12263f;
+    --first-color: #0f3fa9;
+    --second-color: #ffa903;
+    --white-color: #f3f4f7;
     --body-font: 'Montserrat', sans-serif;
     --nomal-font-size: 1rem;
 
@@ -32,7 +32,11 @@ body {
 }
 
 .body_movies{
-  background-color: black!important;
+  background-color: white!important;
+  background-image: url('../img/fondo_movies.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 h1,h2,h3,h4,h5,p,span,label {
@@ -40,7 +44,7 @@ h1,h2,h3,h4,h5,p,span,label {
 }
 
 a{
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 .header{
@@ -53,13 +57,13 @@ a{
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  background-color: var(--white-color);
+  background-color: #1d3b60;
   z-index: var(--z-fixed);
   transition: .5s;
 }
 
 .header__toggle{
-  color: var(--first-color);
+  color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -112,23 +116,23 @@ a{
 
 .nav__logo-icon{
   font-size: 1.25rem;
-  color: var(--white-color);
+  color: var(--second-color);
 }
 
 .nav__logo-name{
-  color: var(--white-color);
+  color: var(--second-color);
   font-weight: 700;
 }
 
 .nav__link{
   position: relative;
-  color: var(--first-color-light);
+  color: var(--white-color)!important;
   margin-bottom: 1.5rem;
   transition: .3s;
 }
 
 .nav__link:hover{
-  color: var(--white-color);
+  color: var(--second-color)!important;
 }
 
 .nav__icon{
@@ -144,7 +148,7 @@ a{
 }
 
 .active{
-  color: var(--white-color);
+  color: var(--second-color)!important;
 }
 
 .active::before{
@@ -246,8 +250,6 @@ a{
   .c_movies{
     margin-top: 80px;
     width: 100% ;
-    background-color: yellowgreen!important;
-    background-image: url('../img/fondo_movies.jpg');
     background-size: cover;
     border-radius: 10px!important;
   }
