@@ -21,9 +21,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::middleware(['auth'])->group(function() {
 

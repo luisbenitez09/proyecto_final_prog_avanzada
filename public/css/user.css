@@ -185,7 +185,9 @@ a{
     padding-left: calc(var(--nav-width) + 188px);
   }
 
-  .cards{
+}
+
+.cards{
     margin-top: 100px;
   }
 
@@ -227,4 +229,12 @@ a{
     border-radius: 25px!important;
   }
 
-}
+  .card-desc {
+    width: 18rem;
+  }
+
+  @media screen and (max-width: 577px){
+    .card-desc {
+      width: 100%;
+    }
+  }
