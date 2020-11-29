@@ -71,31 +71,32 @@
         <div class="row">
 
             <div class="col-md-5">
-
+                <div class="description_movies">
+                <h1><strong>You'll love this.</strong></h1>
+                <p class="main-description">We have all time best movies and the recent ones, 4k and available in all your devices. <br/>
+                Do you really need something else?</p>
+                </div>
             </div>
             <div class="col-md-7 info_movie">
                 
-            <div class="card mt-4">
+            <div class="card mt-4 card_mv">
                 <div class="row">
                     <div class="col-md-4">
                         <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/03/dama-vagabundo-1898245.jpg" class="img-fluid i_mov">
                     </div>
-                    <div class="col-md-5">
-                        <h2 class="card-title mt-2">Lady and the Tramp</h2>
-                        <p>hola</p>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-success">Rentar</button>
-                    </div>
-                </div>
+                    <div class="col-md-8">
+                        <h5 class="title_movie mt-2">Lady and the Tramp</h5>
+                        <p class="classification_movie inf_m">A</p>
+                        <p class="minutes_movie inf_m">90min</p>
+                        <p class="year_movie inf_m">2019</p>
+                        <p class="description_movie">La historia clásica animada de Walt Disney, sobre un romance entre una perrita mimada y un perro vagabundo.</p>
+                        <button class="btn btn-success btn_movie">Rentar</button>
+                 </div>
             </div>
-
-
-
-            
             </div>
         </div>
         <div class="container_movies">.</div>
+    </div>
     </div>
 
     <script src="js/main.js"></script>

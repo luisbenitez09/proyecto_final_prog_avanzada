@@ -33,7 +33,7 @@ body {
 
 .body_movies{
   background-color: white!important;
-  background-image: url('../img/fondo_movies.jpg');
+  background-image: url('../img/fondo-2.jpeg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -195,7 +195,7 @@ a{
 
 }
 
-.cards{
+  .cards{
     margin-top: 100px;
   }
 
@@ -247,6 +247,12 @@ a{
     }
   }
 
+  .card_mv{
+    border-radius: 15px!important;
+    background-color: #344966!important;
+    border: 0px!important;
+  }
+
   .c_movies{
     margin-top: 80px;
     width: 100% ;
@@ -274,4 +280,62 @@ a{
 
   .i_mov{
     height: 100%!important;
+    border-radius: 15px 0px 0px 15px!important;
   }
+
+  .main-description {
+    color: white;
+    font-weight: lighter;
+}
+
+.description_movies{
+  margin-top: 300px;
+}
+
+@media screen and (max-width: 760px){
+  .description_movies{
+    margin-top: 10px;
+  }
+}
+
+.card_mov{
+  box-shadow: 0px 0px 10px -1px #000000;
+  border-radius: 15px!important;
+}
+
+.description_movie{
+  font-weight: lighter;
+  font-size: 15px;
+  margin-top: -8px;
+}
+
+.title_movie{
+}
+
+.classification_movie{
+  font-size: 13px;
+}
+
+.minutes_movie{
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.year_movie{
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.inf_m{
+  display: inline-block;
+}
+
+.btn_movie{
+  background-color: #ffa903!important;
+  border-color: #ffa903!important;
+  width: 30%;
+  height: 20%;
+  border-radius: 20px!important;
+  bottom: 10px;
+  position: relative;
+}
