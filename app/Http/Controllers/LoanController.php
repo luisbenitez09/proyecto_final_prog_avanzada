@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Loan;
 use Illuminate\Http\Request;
+use App\Models\Movie;
+use App\Models\User;
+use Auth;
 
 class LoanController extends Controller
 {
@@ -14,7 +17,9 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
+        $loans = Loan::with('movie','user')->get();
+        $movies = Movie::All();
+        return view ('loans.user', compact('loans','movies'));
     }
 
     /**

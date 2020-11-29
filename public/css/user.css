@@ -331,6 +331,12 @@ a{
   font-size: 13px;
 }
 
+.loan_movie{
+  margin-left: 20px;
+  font-size: 13px;
+  color: #ffa903!important;
+}
+
 .inf_m{
   display: inline-block;
 }
@@ -339,8 +345,7 @@ a{
   background-color: #ffa903!important;
   border-color: #ffa903!important;
   width: 30%;
-  height: 20%;
   border-radius: 20px!important;
-  bottom: 5px;
+  bottom: 7px;
   position: relative;
 }

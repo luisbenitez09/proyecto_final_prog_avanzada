@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Movies</title>
+    <title>Rented movies</title>
 </head>
 
 <body id="body-pd" class="body_movies">
@@ -71,28 +71,30 @@
 
             <div class="col-md-5">
                 <div class="description_movies">
-                    <h1><strong>You'll love this.</strong></h1>
-                    <p class="main-description">We have all time best movies and the recent ones, 4k and available in all your devices. <br />
-                        Do you really need something else?</p>
+                    <h1><strong>Already loving it?</strong></h1>
+                    <p class="main-description"> You can return them whenever you want, there is no rush, the more time you 
+                        have it, the money we charge you ;D</p>
+                        <p class="main-description">Its amazing isn't it?</p>
                 </div>
             </div>
             <div class="col-md-7 info_movie">
 
-                @if(isset($movies) && count($movies)>0)
-                @foreach($movies as $movie)
+                @if(isset($loans) && count($loans)>0)
+                @foreach($loans as $loan)
                 <div class="card mt-4 card_mv">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="img/{{$movie->cover}}" class="img-fluid i_mov">
+                            <img src="img/{{ $loan->movie->cover }}" class="img-fluid i_mov">
                         </div>
                         <div class="col-md-8">
-                            <h5 class="title_movie mt-2">{{ $movie->title }}</h5>
-                            <p class="classification_movie inf_m">{{ $movie->classification }}</p>
-                            <p class="minutes_movie inf_m">{{ $movie->minutes }} min</p>
-                            <p class="year_movie inf_m">{{ $movie->year }}</p>
-                            <p class="category_movie inf_m">{{ $movie->category->name }}</p>
-                            <p class="description_movie">{{ $movie->description }}</p>
-                            <button class="btn btn-success btn_movie">Rentar</button>
+                            <h5 class="title_movie mt-2">{{ $loan->movie->title }}</h5>
+                            <p class="classification_movie inf_m">{{ $loan->movie->classification }}</p>
+                            <p class="minutes_movie inf_m">{{ $loan->movie->minutes }}</p>
+                            <p class="year_movie inf_m">{{ $loan->movie->year }}</p>
+                            <p class="category_movie inf_m">{{ $loan->movie->category->name }}</p>
+                            <p class="loan_movie inf_m">Loan date: {{ $loan->loan_date }}</p>
+                            <p class="description_movie">{{ $loan->movie->description }}</p>
+                            <button class="btn btn-success btn_movie ">Devolver</button>
                         </div>
                     </div>
                 </div>
