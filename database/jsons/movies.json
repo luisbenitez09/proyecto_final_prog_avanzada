@@ -5,7 +5,7 @@
 		"classification": "B15",
 		"minutes": 132,
 		"year": 2019,
-		"cover": "movie.png",
+		"cover": "movies.jpg",
 		"trailer":"https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 4
 	},
@@ -16,7 +16,7 @@
 		"classification": "B15",
 		"minutes": 132,
 		"year": 2019,
-		"cover": "movie.png",
+		"cover": "movies.jpg",
 		"trailer":"https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 2
 	},
@@ -27,7 +27,7 @@
 		"classification": "B15",
 		"minutes": 132,
 		"year": 2019,
-		"cover": "movie.png",
+		"cover": "movies.jpg",
 		"trailer":"https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 1
 	},
@@ -38,7 +38,7 @@
 		"classification": "B15",
 		"minutes": 132,
 		"year": 2019,
-		"cover": "movie.png",
+		"cover": "movies.jpg",
 		"trailer":"https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 3
 	}

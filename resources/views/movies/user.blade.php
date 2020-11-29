@@ -79,21 +79,26 @@
             </div>
             <div class="col-md-7 info_movie">
                 
+            @if(isset($movies) && count($movies)>0)
+            @foreach($movies as $movie)
             <div class="card mt-4 card_mv">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/03/dama-vagabundo-1898245.jpg" class="img-fluid i_mov">
+                        <img src="img/{{$movie->cover}}" class="img-fluid i_mov">
                     </div>
                     <div class="col-md-8">
-                        <h5 class="title_movie mt-2">Lady and the Tramp</h5>
-                        <p class="classification_movie inf_m">A</p>
-                        <p class="minutes_movie inf_m">90min</p>
-                        <p class="year_movie inf_m">2019</p>
-                        <p class="description_movie">La historia clásica animada de Walt Disney, sobre un romance entre una perrita mimada y un perro vagabundo.</p>
+                        <h5 class="title_movie mt-2">{{ $movie->title }}</h5>
+                        <p class="classification_movie inf_m">{{ $movie->classification }}</p>
+                        <p class="minutes_movie inf_m">{{ $movie->minutes }} min</p>
+                        <p class="year_movie inf_m">{{ $movie->year }}</p>
+                        <p class="category_movie inf_m">{{ $movie->category->name }}</p>
+                        <p class="description_movie">{{ $movie->description }}</p>
                         <button class="btn btn-success btn_movie">Rentar</button>
                  </div>
             </div>
             </div>
+            @endforeach
+            @endif
         </div>
         <div class="container_movies">.</div>
     </div>
