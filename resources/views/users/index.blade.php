@@ -12,7 +12,7 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-      <title>Categories</title>
+      <title>Users</title>
   </head>
 
 <body id="body-pd">
@@ -26,7 +26,7 @@
         </div>
         <div class="col-2 add_btn">
             <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addCategory">Add
-                category</button>
+                user</button>
         </div>
     </header>
     <div class="modal fade" id="addCategory" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -34,28 +34,41 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Add a new category</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Add new user</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form method="post" action="{{ url('categories') }}" onsubmit="">
+                <form method="post" action="{{ url('users') }}" onsubmit="">
                     @csrf
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
+                            <label for="exampleInputEmail1">First Name</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Name of the category" name="name">
+                                <input type="text" class="form-control" placeholder="First name" name="name">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Description</label>
+                            <label for="exampleInputEmail1">Last Name</label>
                             <div class="input-group mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Description of the category"
-                                    name="description" required=""></textarea>
+                                <input type="text" class="form-control" placeholder="Last name" name="lastname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="email@domain.com" name="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Password" name="password">
                             </div>
                         </div>
 
@@ -79,31 +92,31 @@
                 </a>
 
                 <div class="nav__list">
-                    <a href="{{ route('dashboard') }}" class="nav__link">
-                        <i class='bx bx-home nav__icon'></i>
-                        <span class="nav__name">Dashboard</span>
-                    </a>
+                        <a href="{{ route('dashboard') }}" class="nav__link">
+                        <i class='bx bx-home nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
 
-                    <a href="{{ route('users') }}" class="nav__link">
-                        <i class='bx bx-user nav__icon'></i>
-                        <span class="nav__name">Users</span>
-                    </a>
+                        <a href="{{ route('users') }}" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name">Users</span>
+                        </a>
+                        
+                        <a href="{{ route('categories') }}" class="nav__link active">
+                            <i class='bx bx-book-open nav__icon' ></i>
+                            <span class="nav__name">Categories</span>
+                        </a>
 
-                    <a href="{{ route('categories') }}" class="nav__link active">
-                        <i class='bx bx-book-open nav__icon'></i>
-                        <span class="nav__name">Categories</span>
-                    </a>
+                        <a href="{{ route('movies') }}" class="nav__link">
+                            <i class='bx bx-film nav__icon' ></i>
+                            <span class="nav__name">Movies</span>
+                        </a>
 
-                    <a href="{{ route('movies') }}" class="nav__link">
-                        <i class='bx bx-film nav__icon'></i>
-                        <span class="nav__name">Movies</span>
-                    </a>
-
-                    <a href="{{ route('logout') }}" class="nav__link">
-                        <i class='bx bx-folder-plus nav__icon'></i>
-                        <span class="nav__name">Loans</span>
-                    </a>
-                </div>
+                        <a href="" class="nav__link">
+                            <i class='bx bx-folder-plus nav__icon' ></i>
+                            <span class="nav__name">Loans</span>
+                        </a>
+                    </div>
             </div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -120,34 +133,37 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Movies</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @if(isset($categories) && count($categories)>0)
-                @foreach($categories as $category)
+                @if(isset($users) && count($users)>0)
+                @foreach($users as $user)
                 <tr>
-                    <th scope="row">{{ $category->id }}</th>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->description }}</td>
-                    <td>{{ count($category->movie) }}</td>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->description }}</td>
+                    <td>{{ count($user->movie) }}</td>
                     <td>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Actions
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a onclick="edit('{{ $category->id }}','{{ $category->name }}','{{ $category->description }}')"
-                                    data-toggle="modal" data-target="#editCategory" class="dropdown-item">Edit</a>
-                                <a onclick="remove({{ $category->id }},this)" class="dropdown-item">
-                                    Delete
-                                </a>
-                            </div>
-                        </div>
+                          <button class="btn btn-secondary dropdown-toggle" type="button"
+                              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false">
+                              Actions
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a onclick="edit('')"
+                                  data-toggle="modal" data-target="#editCategory" class="dropdown-item"
+                                  href="#">Edit</a>
+                              <a onclick="remove('',this)" class="dropdown-item">
+                                  Delete
+                              </a>
+                          </div>
+                      </div>
                     </td>
                 </tr>
                 @endforeach
@@ -202,7 +218,7 @@
     </div>
 
     
-
+    <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

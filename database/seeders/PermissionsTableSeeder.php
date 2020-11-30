@@ -23,7 +23,10 @@ class PermissionsTableSeeder extends Seeder
         $user = Role::create(['name' => 'User']);
 
         //Categories
-        Permission::create(['name' => 'crud categories']);
+        Permission::create(['name' => 'view categories']);
+        Permission::create(['name' => 'add categories']);
+        Permission::create(['name' => 'update categories']);
+        Permission::create(['name' => 'delete categories']);
 
         //Movies
         Permission::create(['name' => 'view movies']);
@@ -32,10 +35,10 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'delete movies']);
 
         //Clients
-        Permission::create(['name' => 'view clients']);
-        Permission::create(['name' => 'add clients']);
-        Permission::create(['name' => 'update clients']);
-        Permission::create(['name' => 'delete clients']);
+        Permission::create(['name' => 'view users']);
+        Permission::create(['name' => 'add users']);
+        Permission::create(['name' => 'update users']);
+        Permission::create(['name' => 'delete users']);
 
         //Loans
         Permission::create(['name' => 'view loans']);
@@ -44,17 +47,20 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'delete loans']);
 
         $admin->givePermissionTo([
-            'crud categories',
+            'view categories',
+            'add categories',
+            'update categories',
+            'delete categories',
 
             'view movies',
             'add movies',
             'update movies',
             'delete movies',
 
-            'view clients',
-            'add clients',
-            'update clients',
-            'delete clients',
+            'view users',
+            'add users',
+            'update users',
+            'delete users',
             
             'view loans',
             'add loans',

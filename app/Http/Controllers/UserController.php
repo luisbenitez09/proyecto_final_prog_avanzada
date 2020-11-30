@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 
-class CategoryController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->hasPermissionTo('view categories')) {
-            $categories = Category::with('movie')->get();
-            return view('categories.index',compact('categories'));
+        if(Auth::user()->hasPermissionTo('view users')) {
+            $users = User::All();
+            return view('users.index',compact('users'));
         } else {
             return view('index');
         }
@@ -42,21 +42,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::user()->hasPermissionTo('add categories')) {
-            if($category = Category::create($request->all())) {
-                return redirect()->back()->with('success','El registro se ha creado correctamente');
+        if(Auth::user()->hasRole('Admin')) {
+            if($user = User::create($request->all())) {
+                return redirect()->back()->with('success','El usuario se ha creado correctamente');
             }
-            return redirect()->back()->with('error','No se pudo crear el registro correctamente');
+            return redirect()->back()->with('error','No se pudo crear el usuario correctamente');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(User $user)
     {
         //
     }
@@ -64,10 +64,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(User $user)
     {
         //
     }
@@ -76,15 +76,15 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        if(Auth::user()->hasPermissionTo('update categories')) {
-            $category = Category::find($request['id']);
-            if ($category) {
-                if ($category->update($request->all())) {
+        if(Auth::user()->hasRole('Admin')) {
+            $user = User::find($request['id']);
+            if ($user) {
+                if ($user->update($request->all())) {
                     return redirect()->back()->with('success','El registro se ha actualizado correctamente');
                 }
             }
@@ -95,15 +95,15 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
-        if(Auth::user()->hasPermissionTo('delete categories')) {
-            $category = Category::find($request['id']);
-            if($category){
-                if ($category->delete()) {
+        if(Auth::user()->hasRole('Admin')) {
+            $user = User::find($request['id']);
+            if($user){
+                if ($user->delete()) {
                     return response()->json([
                         'message' => 'Registro eliminado correctamente',
                         'code' => '200',
@@ -117,3 +117,4 @@ class CategoryController extends Controller
         }
     }
 }
+

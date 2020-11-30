@@ -31,10 +31,15 @@ Route::middleware(['auth'])->group(function() {
 	Route::post('/movies','MovieController@store');
 	Route::put('/movies/{movie}','MovieController@update');
 
-    Route::get('/categories','CategoryController@index');
+    Route::get('/categories','CategoryController@index')->name('categories');
     Route::put('/categories','CategoryController@update');
     Route::post('/categories','CategoryController@store');
     Route::delete('/categories','CategoryController@destroy');
+
+    Route::get('/users','UserController@index')->name('users');
+    Route::put('/users','UserController@update');
+    Route::post('/users','UserController@store');
+    Route::delete('/users','UserController@destroy');
 
     Route::get('/loans','LoanController@index');
 

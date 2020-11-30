@@ -36,27 +36,27 @@
                     </a>
 
                     <div class="nav__list">
-                        <a href="#" class="nav__link active">
+                        <a href="{{ route('dashboard') }}" class="nav__link active">
                         <i class='bx bx-home nav__icon' ></i>
                             <span class="nav__name">Dashboard</span>
                         </a>
 
-                        <a href="#" class="nav__link">
+                        <a href="{{ route('users') }}" class="nav__link">
                             <i class='bx bx-user nav__icon' ></i>
                             <span class="nav__name">Users</span>
                         </a>
                         
-                        <a href="#" class="nav__link">
+                        <a href="{{ route('categories') }}" class="nav__link">
                             <i class='bx bx-book-open nav__icon' ></i>
                             <span class="nav__name">Categories</span>
                         </a>
 
-                        <a href="#" class="nav__link">
+                        <a href="{{ route('movies') }}" class="nav__link">
                             <i class='bx bx-film nav__icon' ></i>
                             <span class="nav__name">Movies</span>
                         </a>
 
-                        <a href="#" class="nav__link">
+                        <a href="" class="nav__link">
                             <i class='bx bx-folder-plus nav__icon' ></i>
                             <span class="nav__name">Loans</span>
                         </a>
