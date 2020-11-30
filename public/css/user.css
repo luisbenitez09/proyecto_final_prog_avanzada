@@ -361,33 +361,27 @@ a{
 
 .col-lg-12{
   padding-left: 0px!important;
-}
-
-.col-md-3{
-  padding-left: 0px!important;
   padding-right: 0px!important;
 }
 
-.col-md-4{
+.colmd-5{
   padding-left: 1px!important;
-}
-
-.col-md-5{
   padding-right: 0px!important;
-  padding-left: 0px!important;
 }
 
-.col-lg-6{
-  padding-left: 0px!important;
-}
-
-.cl-6{
+.colmd-2{
+  padding-left: 1px!important;
   padding-right: 0px!important;
+}
+
+.collg-6{
   padding-left: 0px!important;
+  padding-right: 0px!important;
 }
 
 .mov-cards{
   height: 100%!important;
+  width: 100%!important;
 }
 
 .row_card{

@@ -78,48 +78,58 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2 colmd-2">
             <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://static.t13.cl/images/original/2019/09/1568836077-dtcommonstreamsstreamserver.jpg" alt="Card image">
+                    <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/5c549996c2ff615be28e2321/1549437429475-ARMJU14WF4AT3E1KN5X9/ke17ZwdGBToddI8pDm48kIBS5viOy0HP5EoJT3bHds97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeFSGbkY2-XgWhjRuERUQvFC6XUmZEvTwtms8Q3eFwmTwzgQ1HYBeOI75vUrs92jaw/YMH02.jpg?format=1500w" alt="Card image">
                     <div class="card-img-overlay img-overlay">
                         <h4>Toy Story</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
-            <div class="card mov-cards">
-                    <div class="row row_card">
-                        <div class="col-sm-6">
-                            <img src="https://spoiler.bolavip.com/__export/1582120387249/sites/bolavip/img/2020/02/19/peliculas_similares_a_parasite_que_ver_si_me_gusto_parasite_1_crop1582118764215.jpg_423682103.jpg" class="img-fluid i_movie">
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="cat_mov mt-2">Suspenso</p>
-                            <h5 class="title_mov mt-2">Parasite</h5>
-                            <p class="description_mov">Tanto Gi Taek como su familia están sin trabajo.
-                                 Cuando su hijo mayor, Gi Woo, empieza..</p>
-                        </div>
+            <div class="col-md-2 colmd-2">
+            <div class="card bg-dark text-white">
+                    <img class="card-img" src="https://i.pinimg.com/originals/13/74/b3/1374b3919f45780cca2b111bd377b85b.png" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Toy Story</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-            <div class="card mov-cards">
-                    <div class="row row_card">
-                        <div class="col-sm-6">
-                            <img src="https://spoiler.bolavip.com/__export/1582120387249/sites/bolavip/img/2020/02/19/peliculas_similares_a_parasite_que_ver_si_me_gusto_parasite_1_crop1582118764215.jpg_423682103.jpg" class="img-fluid i_movie">
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="cat_mov mt-2">Suspenso</p>
-                            <h5 class="title_mov mt-2">Parasite</h5>
-                            <p class="description_mov">Tanto Gi Taek como su familia están sin trabajo.
-                                 Cuando su hijo mayor, Gi Woo, empieza..</p>
-                        </div>
+            <div class="col-md-2 colmd-2">
+            <div class="card bg-dark text-white">
+                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/81uAbShOxpL._AC_SL1500_.jpg" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Toy Story</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 colmd-2">
+            <div class="card bg-dark text-white">
+                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/71pCGJSF0lL._AC_SL1050_.jpg" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Toy Story</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 colmd-2">
+            <div class="card bg-dark text-white">
+                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/A1t8xCe9jwL._AC_SL1500_.jpg" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Toy Story</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 colmd-2">
+            <div class="card bg-dark text-white">
+                    <img class="card-img" src="https://media1.popsugar-assets.com/files/thumbor/z5oKgNC9S4DS6Bay78Aoy5aLO4s/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2017/01/26/813/n/1922283/055dc333c3280d59_BeautyAndTheBeast58726d5b9fac8/i/Beauty-Beast-2017-Movie-Posters.jpg" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Toy Story</h4>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-6 cl-6">
+            <div class="col-lg-6 collg-6">
             <div class="card bg-dark text-white">
                     <img class="card-img" src="https://s03.s3c.es/imag/_v0/600x327/e/d/d/interestelar-coronavirus-secuela.jpg" alt="Card image">
                     <div class="card-img-overlay img-overlay">
@@ -127,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 collg-6">
             <div class="card bg-dark text-white">
                     <img class="card-img" src="https://api.time.com/wp-content/uploads/2014/12/american-sniper.jpg?quality=85&w=1024&h=512&crop=1" alt="Card image">
                     <div class="card-img-overlay img-overlay">
