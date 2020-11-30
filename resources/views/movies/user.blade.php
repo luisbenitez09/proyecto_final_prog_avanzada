@@ -82,7 +82,7 @@
                 @foreach($movies as $movie)
                 <div class="card mt-4 card_mv">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-lg-4">
                             <img src="img/{{$movie->cover}}" class="img-fluid i_mov">
                         </div>
                         <div class="col-md-8">

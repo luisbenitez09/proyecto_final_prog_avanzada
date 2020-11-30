@@ -349,3 +349,77 @@ a{
   bottom: 7px;
   position: relative;
 }
+
+.img_cards{
+  height: 400px;
+  width: 100%;
+}
+
+.banner_card{
+  margin-top: -30px;
+}
+
+.col-lg-12{
+  padding-left: 0px!important;
+}
+
+.col-md-3{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+
+.col-md-4{
+  padding-left: 1px!important;
+}
+
+.col-md-5{
+  padding-right: 0px!important;
+  padding-left: 0px!important;
+}
+
+.col-lg-6{
+  padding-left: 0px!important;
+}
+
+.cl-6{
+  padding-right: 0px!important;
+  padding-left: 0px!important;
+}
+
+.mov-cards{
+  height: 100%!important;
+}
+
+.row_card{
+  height: 100%!important;
+}
+
+.i_movie{
+  padding: 0px!important;
+  margin:0px!important ;
+  height: 100%!important;
+  width: 100%!important;
+  border-radius: 0px!important;
+  border: 0px!important;
+}
+
+.cat_mov{
+  color: black!important;
+}
+
+.title_mov{
+  color: #ffa903!important;
+}
+
+.description_mov{
+  color: black!important;
+}
+
+.img-overlay{
+  background-color: rgba(0,0,0,0.4)!important;
+}
+
+.card_image{
+  height: 100%!important;
+  width: 100%!important;
+}
