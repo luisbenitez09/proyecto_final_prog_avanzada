@@ -48,7 +48,12 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::user()->hasPermissionTo('add loans')) {
+            if($loan = Loan::create($request->all())) {
+                return redirect()->back()->with('success','Loan created successfully');
+            }
+            return redirect()->back()->with('error','We couldnt create the new loan');
+        }
     }
 
     /**

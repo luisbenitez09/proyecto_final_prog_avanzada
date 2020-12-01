@@ -26,10 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'DashboardCon
 Route::middleware(['auth'])->group(function() {
 
     Route::get('/movies','MovieController@index')->name('movies');
-	#Route::get('/movies/{id}','MovieController@show');
-	Route::get('/movies-info/{movie}','MovieController@get');
 	Route::post('/movies','MovieController@store');
-	Route::put('/movies/{movie}','MovieController@update');
+    Route::put('/movies','MovieController@update');
+    Route::delete('/movies','MovieController@destroy');
 
     Route::get('/categories','CategoryController@index')->name('categories');
     Route::put('/categories','CategoryController@update');

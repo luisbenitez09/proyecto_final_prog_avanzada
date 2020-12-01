@@ -25,8 +25,7 @@
             <img src="img/logo.svg" alt="" />
         </div>
         <div class="col-2 add_btn">
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addUser">Add
-                user</button>
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addUser">Add user</button>
         </div>
     </header>
     <div class="modal fade" id="addUser" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -40,21 +39,21 @@
                     </button>
                 </div>
 
-                <form method="post" action="{{ url('users') }}" onsubmit="">
+                <form method="POST" action="{{ url('users') }}">
                     @csrf
 
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">First Name</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="First name" name="name">
+                                <input type="text" class="form-control" placeholder="James" name="name">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Last Name</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Last name" name="lastname">
+                                <input type="text" class="form-control" placeholder="Doe" name="lastname">
                             </div>
                         </div>
 
@@ -68,7 +67,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Password" name="password">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
                             </div>
                         </div>
 
@@ -130,46 +129,48 @@
 
     <div class="container dash-content">
         <h2>Users</h2>
-        <table class="table table-borderless">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if(isset($users) && count($users)>0)
-                @foreach($users as $user)
-                <tr>
-                    <th scope="row">{{ $user->id }}</th>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->lastname }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button"
-                              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false">
-                              Actions
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a onclick="edit('{{ $user->id }}', '{{ $user->name }}','{{ $user->lastname }}','{{ $user->email }}', '{{ $user->password }}')"
-                                  data-toggle="modal" data-target="#editUser" class="dropdown-item"
-                                  href="#">Edit</a>
-                              <a onclick="remove('{{ $user->id }}',this)" class="dropdown-item">
-                                  Delete
-                              </a>
-                          </div>
-                      </div>
-                    </td>
-                </tr>
-                @endforeach
-                @endif
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(isset($users) && count($users)>0)
+                    @foreach($users as $user)
+                    <tr>
+                        <th scope="row">{{ $user->id }}</th>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->lastname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>
+                            <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Actions
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a onclick="edit('{{ $user->id }}', '{{ $user->name }}','{{ $user->lastname }}','{{ $user->email }}', '{{ $user->password }}')"
+                                    data-toggle="modal" data-target="#editUser" class="dropdown-item"
+                                    href="#">Edit</a>
+                                <a onclick="remove('{{ $user->id }}',this)" class="dropdown-item">
+                                    Delete
+                                </a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                    @endif
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="modal fade" id="editUser" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -267,7 +268,7 @@
                     if (willDelete) {
                         axios({
                             method: 'delete',
-                            url: '{{ url('categories') }}',
+                            url: '{{ url('users') }}',
                             data: {
                                 id: id,
                                 _token: '{{ csrf_token() }}'

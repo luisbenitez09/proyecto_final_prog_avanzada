@@ -25,8 +25,7 @@
             <img src="img/logo.svg" alt="" />
         </div>
         <div class="col-2 add_btn">
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addLoan">Add
-                Loan</button>
+            <button class="btn btn-primary float-right" onclick="addDate()" data-toggle="modal" data-target="#addLoan">Add Loan</button>
         </div>
     </header>
     <div class="modal fade" id="addLoan" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -44,25 +43,40 @@
                     @csrf
 
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Name of the category" name="name">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="movie_id">Movies</label>
                             </div>
+                            <select class="custom-select" id="movie_id" name="movie_id">
+                                @if (isset($movies) && count($movies)>0)
+                                @foreach ($movies as $movie)
+                                    <option value="{{ $movie->id }}">
+                                        {{ $movie->title }}
+                                    </option>
+                                @endforeach
+                                @endif 
+                            </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Description</label>
-                            <div class="input-group mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Description of the category"
-                                    name="description" required=""></textarea>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="user_id">Users</label>
                             </div>
+                            <select class="custom-select" id="user_id" name="user_id">
+                                @if (isset($users) && count($users)>0)
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id}}">
+                                        {{ $user->name }}
+                                    </option>
+                                @endforeach
+                                @endif 
+                            </select>
                         </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary">Save data</button>
                             <input type="hidden" name="id">
+                            <input type="hidden" id="loan_date" name="loan_date">
                         </div>
                     </div>
                 </form>
@@ -89,7 +103,7 @@
                         <span class="nav__name">Users</span>
                     </a>
 
-                    <a href="{{ route('categories') }}" class="nav__link active">
+                    <a href="{{ route('categories') }}" class="nav__link">
                         <i class='bx bx-book-open nav__icon'></i>
                         <span class="nav__name">Categories</span>
                     </a>
@@ -99,7 +113,7 @@
                         <span class="nav__name">Movies</span>
                     </a>
 
-                    <a href="{{ route('loans') }}" class="nav__link">
+                    <a href="{{ route('loans') }}" class="nav__link active">
                         <i class='bx bx-folder-plus nav__icon'></i>
                         <span class="nav__name">Loans</span>
                     </a>
@@ -116,54 +130,56 @@
     </div>
 
     <div class="container dash-content">
-        <table class="table table-borderless">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Loan date</th>
-                    <th scope="col">Return date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Movie</th>
-                    <th scope="col">User name</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if(isset($loans) && count($loans)>0)
-                @foreach($loans as $loan)
-                <tr>
-                    <th scope="row">{{ $loan->id }}</th>
-                    <td>{{ $loan->loan_date }}</td>
-                    <td>
-                        @if ($loan->status == 'Borrowed')
-                            Pending...
-                        @else
-                            {{ $loan->loan_date }}
-                        @endif
-                    </td>
-                    <td>{{ $loan->status }}</td>
-                    <td>{{ $loan->movie->title }}</td>
-                    <td>{{ $loan->user->name }}</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Actions
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a onclick="edit('{{ $loan->id }}','{{ $loan->status }}')"
-                                    data-toggle="modal" data-target="#editLoan" class="dropdown-item">Edit</a>
-                                <a onclick="remove({{ $loan->id }},this)" class="dropdown-item">
-                                    Delete
-                                </a>
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Loan date</th>
+                        <th scope="col">Return date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Movie</th>
+                        <th scope="col">User name</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(isset($loans) && count($loans)>0)
+                    @foreach($loans as $loan)
+                    <tr>
+                        <th scope="row">{{ $loan->id }}</th>
+                        <td>{{ $loan->loan_date }}</td>
+                        <td>
+                            @if ($loan->status == 'Borrowed')
+                                Pending...
+                            @else
+                                {{ $loan->loan_date }}
+                            @endif
+                        </td>
+                        <td>{{ $loan->status }}</td>
+                        <td>{{ $loan->movie->title }}</td>
+                        <td>{{ $loan->user->name }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a onclick="edit('{{ $loan->id }}','{{ $loan->status }}')"
+                                        data-toggle="modal" data-target="#editLoan" class="dropdown-item">Edit</a>
+                                    <a onclick="remove({{ $loan->id }},this)" class="dropdown-item">
+                                        Delete
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-                @endif
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                    @endforeach
+                    @endif
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="modal fade" id="editLoan" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -187,7 +203,6 @@
                                 <label class="input-group-text" for="status">Status</label>
                             </div>
                             <select class="custom-select" id="status" name="status">
-                                <option selected>Choose...</option>
                                 <option value="Returned">Returned</option>
                                 <option value="Borrowed">Borrowed</option>
                             </select>
@@ -222,6 +237,11 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script type="text/javascript">
+        function addDate() {
+            var f = new Date()
+            $("#loan_date").val(f.getFullYear() + "/" + (f.getMonth()+1) + "/" + f.getDate())
+            console.log("pressed")
+        }
         function edit(id, status) {
             $("#status").val(status)
             $("#id").val(id)
@@ -248,7 +268,7 @@
                             }
                         }).then(function (response) {
                             if (response.data.code == 200) {
-                                swal("Your catefory has been deleted!", {
+                                swal("Your loan has been deleted!", {
                                     icon: "success",
                                 });
                                 $(target).parent().parent().parent().parent().remove();

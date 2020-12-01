@@ -16,7 +16,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->hasRole('User')) {
+        if(Auth::user()->hasrole('User')) {
             $movies = Movie::with('loan')->get();;
             return view ('movies.user', compact('movies'));
         }
@@ -47,26 +47,23 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        if ($movie = Movie::create($request->all())) {
+        if(Auth::user()->hasPermissionTo('add movies')) {
+            if ($movie = Movie::create($request->all())) {
+                if ($request->hasFile('cover_file')) {
+                    
+                    $file = $request->file('cover_file');
+                    $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
 
-            if ($request->hasFile('cover_file')) {
-                
-                $file = $request->file('cover_file');
-                $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
-
-                $path = $request->file('cover_file')->storeAs(
-                    'img', $file_name
-                );
-
-                $movie->cover = $file_name;
-                $movie->save();
-
-
+                    $path = $request->file('cover_file')->storeAs(
+                        'img', $file_name
+                    );
+                    $movie->cover = $file_name;
+                    $movie->save();
+                }
+                return redirect()->back()->with('success','Movie created successuflly');
             }
-
-            return redirect()->back();
+            return redirect()->back()->with('error','We couldnt create the movie');
         }
-        return redirect()->back();
     }
 
     /**
@@ -109,29 +106,24 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Request $request)
     {
-        if ($movie) {
-            if ($movie->update($request->all())) {
-
-                if ($request->hasFile('cover_file')) {
-                
-                    $file = $request->file('cover_file');
-                    $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
-
-                    $path = $request->file('cover_file')->storeAs(
-                        'img', $file_name
-                    );
-
-                    $movie->cover = $file_name;
-                    $movie->save(); 
-
+        if(Auth::user()->hasPermissionTo('update movies')) {
+            $movie = Movie::find($request['id']);
+                if ($movie->update($request->all())) {
+                    if ($request->hasFile('cover_file')) {
+                        $file = $request->file('cover_file');
+                        $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
+                        $path = $request->file('cover_file')->storeAs(
+                            'img', $file_name
+                        );
+                        $movie->cover = $file_name;
+                        $movie->save(); 
+                    }
+                    return redirect()->back()->with('success','Movie updated successuflly');
                 }
-
-                return redirect()->back();
-            }
+            return redirect()->back()->with('error','We couldnt update the movie');
         }
-        return redirect()->back();
     }
 
     /**
@@ -140,8 +132,22 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy(Request $request)
     {
-        //
+        if(Auth::user()->hasPermissionTo('delete movies')) {
+            $movie = Movie::find($request['id']);
+            if($movie){
+                if ($movie->delete()) {
+                    return response()->json([
+                        'message' => 'Movie deleted successfully',
+                        'code' => '200',
+                    ]);
+                }
+            }
+            return response()->json([
+                'message' => 'We couldt delete the movie',
+                'code' => '400',
+            ]);
+        }
     }
 }

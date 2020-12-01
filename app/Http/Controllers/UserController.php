@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class UserController extends Controller
@@ -42,11 +43,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::user()->hasRole('Admin')) {
-            if($user = User::create($request->all())) {
-                return redirect()->back()->with('success','El usuario se ha creado correctamente');
+        if(Auth::user()->hasPermissionTo('add users')) {
+            if($user = User::create([
+                'name' => $request['name'],
+                'lastname' => $request['lastname'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+            ])) {
+                return redirect()->back()->with('success','User created successfully');
             }
-            return redirect()->back()->with('error','No se pudo crear el usuario correctamente');
+            return redirect()->back()->with('error','We couldnt create the new user');
         }
     }
 
@@ -81,14 +87,14 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        if(Auth::user()->hasRole('Admin')) {
+        if(Auth::user()->hasPermissionTo('update users')) {
             $user = User::find($request['id']);
             if ($user) {
                 if ($user->update($request->all())) {
-                    return redirect()->back()->with('success','El registro se ha actualizado correctamente');
+                    return redirect()->back()->with('success','The user was updated successfully');
                 }
             }
-            return redirect()->back()->with('error','No se pudo actualizar el registro correctamente');;
+            return redirect()->back()->with('error','We coulnt update the user');;
         }
     }
 
@@ -100,18 +106,18 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        if(Auth::user()->hasRole('Admin')) {
+        if(Auth::user()->hasPermissionTo('delete users')) {
             $user = User::find($request['id']);
             if($user){
                 if ($user->delete()) {
                     return response()->json([
-                        'message' => 'Registro eliminado correctamente',
+                        'message' => 'User deleted successfully',
                         'code' => '200',
                     ]);
                 }
             }
             return response()->json([
-                'message' => 'No se pudo eliminar el registro',
+                'message' => 'We coulnt delete the user',
                 'code' => '400',
             ]);
         }

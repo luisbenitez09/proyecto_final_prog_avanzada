@@ -44,9 +44,9 @@ class CategoryController extends Controller
     {
         if(Auth::user()->hasPermissionTo('add categories')) {
             if($category = Category::create($request->all())) {
-                return redirect()->back()->with('success','El registro se ha creado correctamente');
+                return redirect()->back()->with('success','Category created successfully');
             }
-            return redirect()->back()->with('error','No se pudo crear el registro correctamente');
+            return redirect()->back()->with('error','We couldnt create the category');
         }
     }
 
@@ -85,10 +85,10 @@ class CategoryController extends Controller
             $category = Category::find($request['id']);
             if ($category) {
                 if ($category->update($request->all())) {
-                    return redirect()->back()->with('success','El registro se ha actualizado correctamente');
+                    return redirect()->back()->with('success','Category updated successfully');
                 }
             }
-            return redirect()->back()->with('error','No se pudo actualizar el registro correctamente');;
+            return redirect()->back()->with('error','We couldnt update the category successfully');;
         }
     }
 
@@ -105,13 +105,13 @@ class CategoryController extends Controller
             if($category){
                 if ($category->delete()) {
                     return response()->json([
-                        'message' => 'Registro eliminado correctamente',
+                        'message' => 'Category deleted successfully',
                         'code' => '200',
                     ]);
                 }
             }
             return response()->json([
-                'message' => 'No se pudo eliminar el registro',
+                'message' => 'We coldnt delete the category',
                 'code' => '400',
             ]);
         }

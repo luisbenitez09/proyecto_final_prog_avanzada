@@ -117,44 +117,46 @@
 
     <div class="container dash-content">
         <h2>Categories</h2>
-        <table class="table table-borderless">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Movies</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if(isset($categories) && count($categories)>0)
-                @foreach($categories as $category)
-                <tr>
-                    <th scope="row">{{ $category->id }}</th>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->description }}</td>
-                    <td>{{ count($category->movie) }}</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Actions
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a onclick="edit('{{ $category->id }}','{{ $category->name }}','{{ $category->description }}')"
-                                    data-toggle="modal" data-target="#editCategory" class="dropdown-item">Edit</a>
-                                <a onclick="remove({{ $category->id }},this)" class="dropdown-item">
-                                    Delete
-                                </a>
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Movies</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(isset($categories) && count($categories)>0)
+                    @foreach($categories as $category)
+                    <tr>
+                        <th scope="row">{{ $category->id }}</th>
+                        <td>{{ $category->name }}</td>
+                        <td>{{ $category->description }}</td>
+                        <td>{{ count($category->movie) }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a onclick="edit('{{ $category->id }}','{{ $category->name }}','{{ $category->description }}')"
+                                        data-toggle="modal" data-target="#editCategory" class="dropdown-item">Edit</a>
+                                    <a onclick="remove({{ $category->id }},this)" class="dropdown-item">
+                                        Delete
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-                @endif
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                    @endforeach
+                    @endif
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="modal fade" id="editCategory" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -222,7 +224,6 @@
             $("#name").val(name)
             $("#description").val(description)
             $("#id").val(id)
-            console.log("Edit pressed")
         }
 
         function remove(id, target) {

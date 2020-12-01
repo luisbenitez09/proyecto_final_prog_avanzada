@@ -30,6 +30,9 @@ body {
     transition: .5s;
 }
 
+table {
+  table-layout: fixed;
+}
 
 a{
   text-decoration: none!important;
