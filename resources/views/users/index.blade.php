@@ -146,8 +146,9 @@
                 <tr>
                     <th scope="row">{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>
-                    <td>{{ $user->description }}</td>
-                    <td>{{ count($user->movie) }}</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
                     <td>
                         <div class="dropdown">
                           <button class="btn btn-secondary dropdown-toggle" type="button"
