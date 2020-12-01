@@ -78,76 +78,34 @@
         </div>
 
         <div class="row">
+        @if(isset($movies) && count($movies)>0)
+                @foreach($movies as $movie)
             <div class="col-md-2 colmd-2">
             <div class="card bg-dark text-white">
                     <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/5c549996c2ff615be28e2321/1549437429475-ARMJU14WF4AT3E1KN5X9/ke17ZwdGBToddI8pDm48kIBS5viOy0HP5EoJT3bHds97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeFSGbkY2-XgWhjRuERUQvFC6XUmZEvTwtms8Q3eFwmTwzgQ1HYBeOI75vUrs92jaw/YMH02.jpg?format=1500w" alt="Card image">
                     <div class="card-img-overlay img-overlay">
-                        <h4>Toy Story</h4>
+                        <h4>{{ $movie->title }}</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 colmd-2">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://i.pinimg.com/originals/13/74/b3/1374b3919f45780cca2b111bd377b85b.png" alt="Card image">
-                    <div class="card-img-overlay img-overlay">
-                        <h4>Toy Story</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 colmd-2">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/81uAbShOxpL._AC_SL1500_.jpg" alt="Card image">
-                    <div class="card-img-overlay img-overlay">
-                        <h4>Toy Story</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 colmd-2">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/71pCGJSF0lL._AC_SL1050_.jpg" alt="Card image">
-                    <div class="card-img-overlay img-overlay">
-                        <h4>Toy Story</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 colmd-2">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/A1t8xCe9jwL._AC_SL1500_.jpg" alt="Card image">
-                    <div class="card-img-overlay img-overlay">
-                        <h4>Toy Story</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 colmd-2">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://media1.popsugar-assets.com/files/thumbor/z5oKgNC9S4DS6Bay78Aoy5aLO4s/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2017/01/26/813/n/1922283/055dc333c3280d59_BeautyAndTheBeast58726d5b9fac8/i/Beauty-Beast-2017-Movie-Posters.jpg" alt="Card image">
-                    <div class="card-img-overlay img-overlay">
-                        <h4>Toy Story</h4>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            @endif
         </div>
 
         <div class="row">
+        @if(isset($movies2) && count($movies2)>0)
+                @foreach($movies2 as $movie)
             <div class="col-lg-6 collg-6">
             <div class="card bg-dark text-white">
                     <img class="card-img" src="https://s03.s3c.es/imag/_v0/600x327/e/d/d/interestelar-coronavirus-secuela.jpg" alt="Card image">
                     <div class="card-img-overlay img-overlay">
-                        <h4>Interstellar</h4>
+                        <h4>{{ $movie->title }}</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 collg-6">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://api.time.com/wp-content/uploads/2014/12/american-sniper.jpg?quality=85&w=1024&h=512&crop=1" alt="Card image">
-                    <div class="card-img-overlay img-overlay">
-                        <h4>American snipper</h4>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            @endif
         </div>
-
-
     </div>
 
     <script src="js/main.js"></script>
