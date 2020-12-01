@@ -25,11 +25,11 @@
             <img src="img/logo.svg" alt="" />
         </div>
         <div class="col-2 add_btn">
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addCategory">Add
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addLoan">Add
                 Loan</button>
         </div>
     </header>
-    <div class="modal fade" id="addCategory" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="addLoan" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -152,7 +152,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a onclick="edit('{{ $loan->id }}','{{ $loan->status }}')"
-                                    data-toggle="modal" data-target="#editCategory" class="dropdown-item">Edit</a>
+                                    data-toggle="modal" data-target="#editLoan" class="dropdown-item">Edit</a>
                                 <a onclick="remove({{ $loan->id }},this)" class="dropdown-item">
                                     Delete
                                 </a>
@@ -166,43 +166,38 @@
         </table>
     </div>
 
-    <div class="modal fade" id="editCategory" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="editLoan" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit Category</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Loan</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form method="post" action="{{ url('categories') }}" onsubmit="">
+                <form method="post" action="{{ url('loans') }}" onsubmit="">
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Category name"
-                                     aria-describedby="basic-addon1" id="name" name="name">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="status">Status</label>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Description</label>
-                            <div class="input-group mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Description of the category"
-                                    name="description" id="description" required=""></textarea>
-                            </div>
-
+                            <select class="custom-select" id="status">
+                                <option selected>Choose...</option>
+                                <option value="Returned">Returned</option>
+                                <option value="Borrowed">Borrowed</option>
+                            </select>
                         </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary">Update data</button>
                             <input type="hidden" name="id" id="id">
+                            <input type="hidden" name="return_date" id="return_date">
                         </div>
                     </div>
                 </form>
@@ -227,17 +222,17 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script type="text/javascript">
-        function edit(id, name, description) {
-            $("#name").val(name)
-            $("#description").val(description)
+        function edit(id, status) {
+            $("#status").val(status)
             $("#id").val(id)
-            console.log("Edit pressed")
+            var f = new Date()
+            $("#return_date").val(f.getFullYear() + "/" + (f.getMonth()+1) + "/" + f.getDate())
         }
 
         function remove(id, target) {
             swal({
                     title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this category!",
+                    text: "Once deleted, you will not be able to recover this loan!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -246,7 +241,7 @@
                     if (willDelete) {
                         axios({
                             method: 'delete',
-                            url: '{{ url('categories') }}',
+                            url: '{{ url('loans') }}',
                             data: {
                                 id: id,
                                 _token: '{{ csrf_token() }}'
@@ -265,7 +260,7 @@
                         });
 
                     } else {
-                        swal("Your category is safe!");
+                        swal("Your loan is safe!");
                     }
                 });
             console.log(id)

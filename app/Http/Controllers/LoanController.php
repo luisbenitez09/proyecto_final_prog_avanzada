@@ -82,7 +82,15 @@ class LoanController extends Controller
      */
     public function update(Request $request, Loan $loan)
     {
-        //
+        if(Auth::user()->hasRole('Admin')) {
+            $loan = Loan::find($request['id']);
+            if ($loan) {
+                if ($loan->update($request->all())) {
+                    return redirect()->back()->with('success','El registro se ha actualizado correctamente');
+                }
+            }
+            return redirect()->back()->with('error','No se pudo actualizar el registro correctamente');;
+        }
     }
 
     /**
