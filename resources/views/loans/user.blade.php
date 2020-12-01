@@ -94,7 +94,7 @@
                             <p class="category_movie inf_m">{{ $loan->movie->category->name }}</p>
                             <p class="loan_movie inf_m">Loan date: {{ $loan->loan_date }}</p>
                             <p class="description_movie">{{ $loan->movie->description }}</p>
-                            <button class="btn btn-success btn_movie ">Devolver</button>
+                            <button class="btn btn-success btn_movie ">Returned</button>
                         </div>
                     </div>
                 </div>

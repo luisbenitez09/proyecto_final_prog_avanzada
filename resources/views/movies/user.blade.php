@@ -92,7 +92,7 @@
                             <p class="year_movie inf_m">{{ $movie->year }}</p>
                             <p class="category_movie inf_m">{{ $movie->category->name }}</p>
                             <p class="description_movie">{{ $movie->description }}</p>
-                            <button class="btn btn-success btn_movie">Rentar</button>
+                            <button class="btn btn-success btn_movie">Get</button>
                         </div>
                     </div>
                 </div>
