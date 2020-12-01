@@ -4,7 +4,7 @@
 		"return_date": "2020-11-20",
 		"status": "Returned",
 		"movie_id": 1,
-		"user_id": 2
+		"user_id": 1
     },
     
     {
@@ -12,6 +12,6 @@
 		"return_date": "2020-11-05",
 		"status": "Borrowed",
 		"movie_id": 3,
-		"user_id": 2
+		"user_id": 1
 	}
 ]

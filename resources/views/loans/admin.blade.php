@@ -186,7 +186,7 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="status">Status</label>
                             </div>
-                            <select class="custom-select" id="status">
+                            <select class="custom-select" id="status" name="status">
                                 <option selected>Choose...</option>
                                 <option value="Returned">Returned</option>
                                 <option value="Borrowed">Borrowed</option>
