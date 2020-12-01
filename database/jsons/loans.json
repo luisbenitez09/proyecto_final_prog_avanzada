@@ -2,15 +2,15 @@
 	{
 		"loan_date": "2020-11-02",
 		"return_date": "2020-11-20",
-		"status": "Prestado",
+		"status": "Returned",
 		"movie_id": 1,
 		"user_id": 2
     },
     
     {
 		"loan_date": "2020-11-05",
-		"return_date": "2020-11-25",
-		"status": "Prestado",
+		"return_date": "2020-11-05",
+		"status": "Borrowed",
 		"movie_id": 3,
 		"user_id": 2
 	}

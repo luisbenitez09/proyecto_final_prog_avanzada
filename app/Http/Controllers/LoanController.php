@@ -17,9 +17,17 @@ class LoanController extends Controller
      */
     public function index()
     {
-        $loans = Loan::with('movie','user')->get();
-        $movies = Movie::All();
-        return view ('loans.user', compact('loans','movies'));
+        if(Auth::user()->hasRole('Admin')) {
+            $loans = Loan::with('movie','user')->get();
+            $movies = Movie::All();
+            $users = User::All();
+            return view ('loans.admin', compact('loans','movies', 'users'));
+        } else if(Auth::user()->hasRole('user')) {
+            $loans = Loan::with('movie','user')->get();
+            $movies = Movie::All();
+            return view ('loans.user', compact('loans','movies'));
+        }
+    
     }
 
     /**

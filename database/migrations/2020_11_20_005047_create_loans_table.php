@@ -17,7 +17,7 @@ class CreateLoansTable extends Migration
             $table->id();
             $table->date('loan_date');
             $table->date('return_date')->nullable();
-            $table->string('status')->default('Prestado');
+            $table->string('status')->default('Borrowed');
 
             $table->unsignedBigInteger('movie_id');
             $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');

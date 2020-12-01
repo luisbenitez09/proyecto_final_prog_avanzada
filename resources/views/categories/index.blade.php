@@ -34,7 +34,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Add a new category</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Add new category</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -99,7 +99,7 @@
                         <span class="nav__name">Movies</span>
                     </a>
 
-                    <a href="{{ route('logout') }}" class="nav__link">
+                    <a href="{{ route('loans') }}" class="nav__link">
                         <i class='bx bx-folder-plus nav__icon'></i>
                         <span class="nav__name">Loans</span>
                     </a>
@@ -116,6 +116,7 @@
     </div>
 
     <div class="container dash-content">
+        <h2>Categories</h2>
         <table class="table table-borderless">
             <thead>
                 <tr>
@@ -243,7 +244,7 @@
                             }
                         }).then(function (response) {
                             if (response.data.code == 200) {
-                                swal("Your catefory has been deleted!", {
+                                swal("Your category has been deleted!", {
                                     icon: "success",
                                 });
                                 $(target).parent().parent().parent().parent().remove();

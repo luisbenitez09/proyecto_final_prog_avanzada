@@ -56,7 +56,7 @@
                             <span class="nav__name">Movies</span>
                         </a>
 
-                        <a href="" class="nav__link">
+                        <a href="{{ route('loans') }}" class="nav__link">
                             <i class='bx bx-folder-plus nav__icon' ></i>
                             <span class="nav__name">Loans</span>
                         </a>

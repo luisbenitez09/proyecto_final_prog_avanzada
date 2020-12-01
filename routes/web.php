@@ -41,7 +41,10 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/users','UserController@store');
     Route::delete('/users','UserController@destroy');
 
-    Route::get('/loans','LoanController@index');
+    Route::get('/loans','LoanController@index')->name('loans');
+    Route::put('/loans','LoanController@update');
+    Route::post('/loans','LoanController@store');
+    Route::delete('/loans','LoanController@destroy');
 
 });
 

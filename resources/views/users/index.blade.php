@@ -25,11 +25,11 @@
             <img src="img/logo.svg" alt="" />
         </div>
         <div class="col-2 add_btn">
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addCategory">Add
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addUser">Add
                 user</button>
         </div>
     </header>
-    <div class="modal fade" id="addCategory" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="addUser" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -97,12 +97,12 @@
                             <span class="nav__name">Dashboard</span>
                         </a>
 
-                        <a href="{{ route('users') }}" class="nav__link">
+                        <a href="{{ route('users') }}" class="nav__link active">
                             <i class='bx bx-user nav__icon' ></i>
                             <span class="nav__name">Users</span>
                         </a>
                         
-                        <a href="{{ route('categories') }}" class="nav__link active">
+                        <a href="{{ route('categories') }}" class="nav__link">
                             <i class='bx bx-book-open nav__icon' ></i>
                             <span class="nav__name">Categories</span>
                         </a>
@@ -112,7 +112,7 @@
                             <span class="nav__name">Movies</span>
                         </a>
 
-                        <a href="" class="nav__link">
+                        <a href="{{ route('loans') }}" class="nav__link">
                             <i class='bx bx-folder-plus nav__icon' ></i>
                             <span class="nav__name">Loans</span>
                         </a>
@@ -129,6 +129,7 @@
     </div>
 
     <div class="container dash-content">
+        <h2>Users</h2>
         <table class="table table-borderless">
             <thead>
                 <tr>
@@ -136,7 +137,6 @@
                     <th scope="col">First name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Role</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -146,9 +146,8 @@
                 <tr>
                     <th scope="row">{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>{{ $user->lastname }}</td>
+                    <td>{{ $user->email }}</td>
                     <td>
                         <div class="dropdown">
                           <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -157,10 +156,10 @@
                               Actions
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a onclick="edit('')"
-                                  data-toggle="modal" data-target="#editCategory" class="dropdown-item"
+                              <a onclick="edit('{{ $user->id }}', '{{ $user->name }}','{{ $user->lastname }}','{{ $user->email }}', '{{ $user->password }}')"
+                                  data-toggle="modal" data-target="#editUser" class="dropdown-item"
                                   href="#">Edit</a>
-                              <a onclick="remove('',this)" class="dropdown-item">
+                              <a onclick="remove('{{ $user->id }}',this)" class="dropdown-item">
                                   Delete
                               </a>
                           </div>
@@ -173,38 +172,52 @@
         </table>
     </div>
 
-    <div class="modal fade" id="editCategory" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="editUser" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit Category</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit User</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form method="post" action="{{ url('categories') }}" onsubmit="">
+                <form method="post" action="{{ url('users') }}" onsubmit="">
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
+                            <label for="exampleInputEmail1">First Name</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Category name"
+                                <input type="text" class="form-control" placeholder="First name"
                                      aria-describedby="basic-addon1" id="name" name="name">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Description</label>
+                            <label for="exampleInputEmail1">Last Name</label>
                             <div class="input-group mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Description of the category"
-                                    name="description" id="description" required=""></textarea>
+                                <input type="text" class="form-control" placeholder="Last name"
+                                     aria-describedby="basic-addon1" id="lastname" name="lastname">
                             </div>
-
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="User email"
+                                     aria-describedby="basic-addon1" id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">New password</label>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control"
+                                     aria-describedby="basic-addon1" id="password" name="password">
+                            </div>
+                        </div>
+
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -234,17 +247,18 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script type="text/javascript">
-        function edit(id, name, description) {
+        function edit(id, name, lastname, email, password) {
             $("#name").val(name)
-            $("#description").val(description)
+            $("#lastname").val(lastname)
+            $("#email").val(email)
             $("#id").val(id)
-            console.log("Edit pressed")
+            $("#password").val(password)
         }
 
         function remove(id, target) {
             swal({
                     title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this category!",
+                    text: "Once deleted, you will not be able to recover this user!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -260,7 +274,7 @@
                             }
                         }).then(function (response) {
                             if (response.data.code == 200) {
-                                swal("Your catefory has been deleted!", {
+                                swal("Your user has been deleted!", {
                                     icon: "success",
                                 });
                                 $(target).parent().parent().parent().parent().remove();
@@ -272,7 +286,7 @@
                         });
 
                     } else {
-                        swal("Your category is safe!");
+                        swal("Your user is safe!");
                     }
                 });
             console.log(id)
