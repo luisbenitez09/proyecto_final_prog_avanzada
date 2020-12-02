@@ -1,82 +1,203 @@
 [
 	{
-		"title": "Parasite",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
-		"classification": "B15",
-		"minutes": 132,
+		"title": "Lady and the Tramp",
+		"description": "Reina begins to hang out with Golfo, a stray dog who only knows the world of the street. Despite coming from such..",
+		"classification": "AA",
+		"minutes": 110,
 		"year": 2019,
 		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
-		"category_id": 4
+		"trailer": "https://www.youtube.com/watch?v=F_oZlPMG-Lc",
+		"category_id": 12
 	},
 	{
-		"title": "Película 2",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
+		"title": "Joker",
+		"description": "Arthur Fleck loves to make people laugh, but his career as a comedian is a failure. Social repudiation, marginalization and..",
 		"classification": "B15",
-		"minutes": 132,
+		"minutes": 122,
 		"year": 2019,
 		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
-		"category_id": 2
+		"trailer": "https://www.youtube.com/watch?v=t433PEQGErc",
+		"category_id": 5
 	},
 	{
-		"title": "Película 3",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
+		"title": "The lion king",
+		"description": "A young lion prince flees his kingdom only to learn the true meaning of responsibility and courage.",
 		"classification": "B15",
-		"minutes": 132,
+		"minutes": 118,
 		"year": 2019,
 		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
-		"category_id": 1
+		"trailer": "https://www.youtube.com/watch?v=BfSAvH2fGkE",
+		"category_id": 7
 	},
 	{
-		"title": "Película 4",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
-		"classification": "B15",
-		"minutes": 132,
+		"title": "1917",
+		"description": "During the First World War, two young British soldiers receive an order, apparently impossible to execute..",
+		"classification": "B",
+		"minutes": 119,
 		"year": 2019,
 		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
+		"trailer": "https://www.youtube.com/watch?v=gZjQROMAh_s",
+		"category_id": 9
+	},
+	{
+		"title": "You Me Her",
+		"description": "To make their sex life more attractive, a couple hires a prostitute. But things take an unexpected turn ..",
+		"classification": "B15",
+		"minutes": 120,
+		"year": 2016,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=cQsBkoShglM",
 		"category_id": 3
 	},
 	{
-		"title": "Toy Story",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
-		"classification": "B15",
-		"minutes": 132,
-		"year": 2019,
+		"title": "Avengers: Infinity war",
+		"description": "Superheroes team up to defeat the mighty Thanos, the worst enemy they have ever faced..",
+		"classification": "B",
+		"minutes": 160,
+		"year": 2018,
 		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
+		"trailer": "https://www.youtube.com/watch?v=QwievZ1Tx-8",
 		"category_id": 4
-	},
-	{
-		"title": "Avengers",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
-		"classification": "B15",
-		"minutes": 132,
-		"year": 2019,
-		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
-		"category_id": 3
 	},
 	{
 		"title": "Aladdin",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
-		"classification": "B15",
-		"minutes": 132,
+		"description": "Aladdin is a petty thief who falls in love with the Sultan's daughter, Princess Jasmine..",
+		"classification": "AA",
+		"minutes": 128,
 		"year": 2019,
 		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 12
+	},
+	{
+		"title": "Coco",
+		"description": "Miguel is a boy who dreams of being a musician, but his family forbids him because his great-great-grandfather..",
+		"classification": "AA",
+		"minutes": 109,
+		"year": 2017,
+		"cover": "movies.jpg",
 		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
+		"category_id": 6
+	},
+	{
+		"title": "Interestelar",
+		"description": "They embark on a space journey to find a place with the necessary conditions..",
+		"classification": "B",
+		"minutes": 169,
+		"year": 2014,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 10
+	},
+	{
+		"title": "American snipper",
+		"description": "US Navy sniper and SEAL Chris Kyle saves many lives on the battlefields..",
+		"classification": "B-15",
+		"minutes": 134,
+		"year": 2014,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 9
+	},
+	{
+		"title": "The Conjuring",
+		"description": "Face a demonic entity while trying to help a family that is being..",
+		"classification": "B15",
+		"minutes": 112,
+		"year": 2013,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 1
 	},
 	{
-		"title": "Película 6",
-		"description": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor",
+		"title": "Anabelle",
+		"description": "John Form finds the perfect gift for Mia, his pregnant wife: a beautiful antique doll..",
+		"classification": "B15",
+		"minutes": 100,
+		"year": 2014,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 1
+	},
+	{
+		"title": "La La Land",
+		"description": "Sebastian, a jazz pianist, and Mia, an aspiring actress, fall madly in love..",
+		"classification": "B",
+		"minutes": 128,
+		"year": 2016,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 8
+	},
+	{
+		"title": "Incredibles 2",
+		"description": "Helen must fight a cybercriminal who plans to hypnotize the world through the screens of..",
+		"classification": "AA",
+		"minutes": 125,
+		"year": 2018,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 6
+	},
+	{
+		"title": "Extremely Wicked, Shockingly Evil and Vile",
+		"description": "Ted and Liz are a happy couple with no major worries until Ted is arrested and..",
+		"classification": "B15",
+		"minutes": 108,
+		"year": 2019,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 11
+	},
+	{
+		"title": "Toy Story 4",
+		"description": "Woody has always been clear about what his job is in the world: taking care of his owner, be it Andy or Bonnie..",
+		"classification": "AA",
+		"minutes": 100,
+		"year": 2019,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 6
+	},
+	{
+		"title": "Parasite",
+		"description": "Both Gi Taek and his family are out of work. When his oldest son, Gi Woo, starts..",
 		"classification": "B15",
 		"minutes": 132,
 		"year": 2019,
 		"cover": "movies.jpg",
-		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 5
+	},
+	{
+		"title": "The Fast and the Furious",
+		"description": "Former con Dominic Toretto joins his old adversary, Brian O'Conner, who now works for him..",
+		"classification": "B",
+		"minutes": 107,
+		"year": 2009,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
+	},
+	{
+		"title": "Justice League",
+		"description": "Bruce Wayne enlists the help of his new ally, Diana Prince, to face an even more enemy..",
+		"classification": "B",
+		"minutes": 120,
+		"year": 2017,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 4
+	},
+	{
+		"title": "Shazam!",
+		"description": "Billy Batson, a cunning 14-year-old, transforms into the superhero Shazam..",
+		"classification": "B",
+		"minutes": 132,
+		"year": 2019,
+		"cover": "movies.jpg",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 2
 	}
+	
 ]

@@ -79,7 +79,7 @@
                 <div class="card mt-4 card_mv">
                     <div class="row">
                         <div class="col-4">
-                            <img src="img/{{ $loan->movie->cover }}" class="i_mov">
+                            <img src="img/{{ $loan->movie->cover }}" class="img-fluid i_mov">
                         </div>
                         <div class="col-8">
                             <h5 class="title_movie mt-2">{{ $loan->movie->title }}</h5>

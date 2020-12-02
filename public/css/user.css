@@ -251,7 +251,6 @@ a{
   border-radius: 15px!important;
   background-color: #344966!important;
   border: 0px!important;
-  max-height: 180px!important;
 }
 
 .c_movies{
@@ -281,7 +280,7 @@ a{
 
 .i_mov{
   width: 180px;
-  height: 180px!important;
+  height: 100%!important;
   border-radius: 15px 0px 0px 15px!important;
 }
 
@@ -345,7 +344,7 @@ a{
   border-color: #ffa903!important;
   width: 30%;
   border-radius: 20px!important;
-  bottom: 7px;
+  bottom: 10px!important;
   position: relative;
 }
 
