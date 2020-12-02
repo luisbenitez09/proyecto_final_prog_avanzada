@@ -12,7 +12,7 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-      <title>Movies</title>
+      <title>Loan</title>
   </head>
 
 <body id="body-pd">
@@ -73,69 +73,63 @@
     </div>
 
     <div class="container dash-content">
-        <div class="row"><h1>{{ $movie->title }}</h1></div>
+        <div class="row"><h1>{{ $loan->movie->title }}</h1></div>
         <div class="row second-row">
             <div class="col-md-4">
                 <form action="">
                     <label >Classification</label>
-                    <input class="form-control" type="text" value="{{ $movie->classification }}" readonly>
+                    <input class="form-control" type="text" value="{{ $loan->movie->classification }}" readonly>
                     <br>
                     <label >Year</label>
-                    <input class="form-control" type="text" value="{{ $movie->year }}" readonly>
+                    <input class="form-control" type="text" value="{{ $loan->movie->year }}" readonly>
                     <br>
                     <label >Minutes</label>
-                    <input class="form-control" type="text" value="{{ $movie->minutes }}" readonly>
+                    <input class="form-control" type="text" value="{{ $loan->movie->minutes }}" readonly>
                 </form>
             </div>
             <div class="col-md-4 ">
                 <label>Trailer</label>
-                <input class="form-control" type="text" value="{{ $movie->trailer }}" readonly>
+                <input class="form-control" type="text" value="{{ $loan->movie->trailer }}" readonly>
                 <br>
                 <label >Category</label>
-                <input class="form-control" type="text" value="{{ $movie->category->name }}" readonly>
+                <input class="form-control" type="text" value="{{ $loan->movie->category->name }}" readonly>
                 <br>
                 <label>Description</label>
-                <textarea readonly class="form-control" cols="32" rows="2">{{ $movie->description }}</textarea>
+                <textarea readonly class="form-control" cols="32" rows="2">{{ $loan->movie->description }}</textarea>
             </div>
             <div class="col-md-4">
-            <img src="img/{{ $movie->cover }}" class="cover"/>
+                <img src="img/{{ $loan->movie->cover }}" class="cover"/>
             </div>
         </div>
+
+        <div class="row second-row"><h1>Loan info</h1></div>
         <div class="row second-row">
-            <h2>Loans</h2>
-            <div class="table-responsive">
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th scope="col">Loan Date</th>
-                            <th scope="col">Return date</th>
-                            <th scope="col">Loan Status</th>
-                            <th scope="col">User</th>
-                            <th scope="col">User email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if(isset($loans) && count($loans)>0)
-                        @foreach($loans as $loan)
-                        @if ($loan->movie_id == $movie->id)
-                            <tr>
-                                <td>{{ $loan->loan_date }}</td>
-                                <td>
-                                    @if ($loan->status == "Borrowed")
-                                        Pending...
-                                    @else
-                                        {{ $loan->return_date }}
-                                    @endif
-                                </td>
-                                <td>{{ $loan->status }}</td>
-                                <td>{{ $loan->user->name }}</td>
-                                <td>{{ $loan->user->email }}</td>
-                            </tr>
-                        @endif
-                        @endforeach
-                        @endif
-                    </tbody>
-                </table>
+            <div class="col-md-4">
+                <form action="">
+                    <label >First name</label>
+                    <input class="form-control" type="text" value="{{ $loan->user->name }}" readonly>
+                    <br>
+                    <label >Last name</label>
+                    <input class="form-control" type="text" value="{{ $loan->user->lastname }}" readonly>
+                </form>
+            </div>
+            <div class="col-md-4 ">
+                <label>Email</label>
+                <input class="form-control" type="text" value="{{ $loan->user->email }}" readonly>
+                <br>
+                <label >Loan Status</label>
+                <input class="form-control" type="text" value="{{ $loan->status }}" readonly>
+            </div>
+            <div class="col-md-4 ">
+                <label>Loan date</label>
+                <input class="form-control" type="text" value="{{ $loan->loan_date }}" readonly>
+                <br>
+                <label >Return date</label>
+                @if ($loan->status == "Borrowed")
+                    <input class="form-control" type="text" value="Pending..." readonly>
+                @else
+                    <input class="form-control" type="text" value="{{ $loan->status }}" readonly>
+                @endif
             </div>
         </div>
 

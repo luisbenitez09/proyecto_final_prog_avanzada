@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Models\Category;
+use App\Models\User;
+use App\Models\Loan;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -68,13 +70,19 @@ class MovieController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show(Request $request)
     {
-        //
+        if(Auth::user()->hasRole('Admin')) {
+            $movie = Movie::find($request['id']);
+            $categories = Category::All();
+            $users = User::All();
+            $loans = Loan::All();
+            return view ('movies.index', compact('movie','categories', 'users', 'loans'));
+        } 
     }
 
     /**

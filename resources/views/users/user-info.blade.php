@@ -12,7 +12,7 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-      <title>Movies</title>
+      <title>User</title>
   </head>
 
 <body id="body-pd">
@@ -73,32 +73,17 @@
     </div>
 
     <div class="container dash-content">
-        <div class="row"><h1>{{ $movie->title }}</h1></div>
+    <div class="row"><h1>{{ $user->name }} {{  $user->lastname}}</h1></div>
         <div class="row second-row">
             <div class="col-md-4">
                 <form action="">
-                    <label >Classification</label>
-                    <input class="form-control" type="text" value="{{ $movie->classification }}" readonly>
-                    <br>
-                    <label >Year</label>
-                    <input class="form-control" type="text" value="{{ $movie->year }}" readonly>
-                    <br>
-                    <label >Minutes</label>
-                    <input class="form-control" type="text" value="{{ $movie->minutes }}" readonly>
+                    <label >Email</label>
+                <input class="form-control" type="text" value="{{ $user->email }}" readonly>
                 </form>
             </div>
             <div class="col-md-4 ">
-                <label>Trailer</label>
-                <input class="form-control" type="text" value="{{ $movie->trailer }}" readonly>
-                <br>
-                <label >Category</label>
-                <input class="form-control" type="text" value="{{ $movie->category->name }}" readonly>
-                <br>
-                <label>Description</label>
-                <textarea readonly class="form-control" cols="32" rows="2">{{ $movie->description }}</textarea>
-            </div>
-            <div class="col-md-4">
-            <img src="img/{{ $movie->cover }}" class="cover"/>
+                <label >Role</label>
+                <input class="form-control" type="text" value="{{ $user->role_id }}" readonly>
             </div>
         </div>
         <div class="row second-row">
@@ -110,14 +95,13 @@
                             <th scope="col">Loan Date</th>
                             <th scope="col">Return date</th>
                             <th scope="col">Loan Status</th>
-                            <th scope="col">User</th>
-                            <th scope="col">User email</th>
+                            <th scope="col">Movie</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if(isset($loans) && count($loans)>0)
                         @foreach($loans as $loan)
-                        @if ($loan->movie_id == $movie->id)
+                        @if ($loan->user_id == $user->id )
                             <tr>
                                 <td>{{ $loan->loan_date }}</td>
                                 <td>
@@ -128,8 +112,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $loan->status }}</td>
-                                <td>{{ $loan->user->name }}</td>
-                                <td>{{ $loan->user->email }}</td>
+                                <td>{{ $loan->movie->title }}</td>
                             </tr>
                         @endif
                         @endforeach

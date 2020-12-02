@@ -156,12 +156,17 @@
                                 Actions
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <form action="{{ route('userInfo') }}">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $user->id }}">
+                                    <button type="submit" class="dropdown-item">View</button>
+                                </form>
                                 <a onclick="edit('{{ $user->id }}', '{{ $user->name }}','{{ $user->lastname }}','{{ $user->email }}', '{{ $user->password }}')"
                                     data-toggle="modal" data-target="#editUser" class="dropdown-item"
                                     href="#">Edit</a>
                                 <a onclick="remove('{{ $user->id }}',this)" class="dropdown-item">
-                                    Delete
-                                </a>
+                                    Delete</a>
+                                
                             </div>
                         </div>
                         </td>

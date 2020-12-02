@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Loan;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
@@ -58,13 +61,19 @@ class UserController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Request $request)
     {
-        //
+        if(Auth::user()->hasRole('Admin')) {
+            $user = User::find($request['id']);
+            $categories = Category::All();
+            $movies = Movie::All();
+            $loans = Loan::All();
+            return view ('users.user-info', compact('user','categories', 'movies', 'loans'));
+        } 
     }
 
     /**

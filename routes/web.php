@@ -26,7 +26,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'DashboardCon
 Route::middleware(['auth'])->group(function() {
 
     Route::get('/movies','MovieController@index')->name('movies');
-	Route::post('/movies','MovieController@store');
+    Route::get('/movieInfo','MovieController@show')->name('movieInfo');
+    Route::post('/movies','MovieController@store');
     Route::put('/movies','MovieController@update');
     Route::delete('/movies','MovieController@destroy');
 
@@ -36,11 +37,13 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/categories','CategoryController@destroy');
 
     Route::get('/users','UserController@index')->name('users');
+    Route::get('/userInfo','UserController@show')->name('userInfo');
     Route::put('/users','UserController@update');
     Route::post('/users','UserController@store');
     Route::delete('/users','UserController@destroy');
 
     Route::get('/loans','LoanController@index')->name('loans');
+    Route::get('/loanInfo','LoanController@show')->name('loanInfo');
     Route::put('/loans','LoanController@update');
     Route::post('/loans','LoanController@store');
     Route::delete('/loans','LoanController@destroy');

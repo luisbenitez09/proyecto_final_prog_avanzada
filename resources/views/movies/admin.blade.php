@@ -193,12 +193,15 @@
                                     Actions
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <form action="{{ route('movieInfo') }}">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $movie->id }}">
+                                        <button type="submit" class="dropdown-item">View</button>
+                                    </form>
                                     <a onclick="edit('{{ $movie->id }}', '{{ $movie->title }}', '{{ $movie->description }}','{{ $movie->classification }}','{{ $movie->minutes }}', '{{ $movie->year }}', '{{ $movie->trailer }}', '{{ $movie->category_id }}')"
                                     data-toggle="modal" data-target="#editMovie" class="dropdown-item"
                                     href="#">Edit</a>
-                                <a onclick="remove('{{ $movie->id }}',this)" class="dropdown-item">
-                                    Delete
-                                </a>
+                                <a onclick="remove('{{ $movie->id }}',this)" class="dropdown-item">Delete</a>
                                 </div>
                                 </div>
                             </td>
@@ -313,7 +316,7 @@
     </div> 
 
     
-
+    <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

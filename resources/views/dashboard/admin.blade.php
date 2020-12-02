@@ -78,26 +78,43 @@
                     <div class="row" style="text-align: center">
                         <div class="col">
                             <button type="button" class="btn counter dark btn-danger">
-                                Categories <span class="badge badge-light">9</span>
-                                <span class="sr-only">Categories</span>
+                                Categories
+                                <span class="badge badge-light">
+                                    @if (isset($categories) && count($categories)>0)
+                                        {{ count($categories) }}
+                                    @endif
+                                </span>
                             </button>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn counter btn-warning">
-                                Movies <span class="badge badge-light">23</span>
-                                <span class="sr-only">Movies</span>
+                            <button type="button" class="btn counter btn-info">
+                                Movies 
+                                <span class="badge badge-light">
+                                    @if (isset($movies) && count($movies)>0)
+                                        {{ count($movies) }}
+                                    @endif
+                                </span>
                             </button>
                         </div>
                         <div class="col">
                             <button type="button" class="btn counter btn-primary">
-                                Users <span class="badge badge-light">40</span>
-                                <span class="sr-only">Users</span>
+                                Users 
+                                <span class="badge badge-light">
+                                    @if (isset($users) && count($users)>0)
+                                        {{ count($users) }}
+                                    @endif
+                                </span>
+                                
                             </button>
                         </div>
                         <div class="col">
                             <button type="button" class="btn counter btn-success">
-                                Loans <span class="badge badge-light">956</span>
-                                <span class="sr-only">Loans</span>
+                                Loans 
+                                <span class="badge badge-light">
+                                    @if (isset($loans) && count($loans)>0)
+                                        {{ count($loans) }}
+                                    @endif
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -113,6 +130,7 @@
                     </div>
                 </div> 
             </div>
+            <input type="hidden" id="action" value="">
         </div>
 
         <script src="js/main.js"></script>
@@ -120,6 +138,75 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-        <script src="js/radarChart.js"></script>
+        <script>
+            //radar
+            var ctxR = document.getElementById("radarChart").getContext('2d');
+            var myRadarChart = new Chart(ctxR, {
+                type: 'radar',
+                data: {
+                    labels: ["Action", "Drama", "Romantic", "Kids", "Motivational", "Documental", "Comedy"],
+                    datasets: [{
+                            label: "Rented movies",
+                            data: [6, 5, 9, 8, 5, 5, 4],
+                            backgroundColor: [
+                                'rgba(105, 0, 132, .2)',
+                            ],
+                            borderColor: [
+                                'rgba(200, 99, 132, .7)',
+                            ],
+                            borderWidth: 2
+                        },
+                        {
+                            label: "Quantity",
+                            data: [2, 4, 4, 1, 9, 2, 10],
+                            backgroundColor: [
+                                'rgba(0, 250, 220, .2)',
+                            ],
+                            borderColor: [
+                                'rgba(0, 213, 132, .7)',
+                            ],
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+            //line
+            var ctxL = document.getElementById("lineChart").getContext('2d');
+            var myLineChart = new Chart(ctxL, {
+                type: 'line',
+                data: {
+                    labels: ["November", "December"],
+                    datasets: [{
+                            label: "New users",
+                            data: [87,76],
+                            backgroundColor: [
+                                '#0f40a95f',
+                            ],
+                            borderColor: [
+                                '#0f3fa9',
+                            ],
+                            borderWidth: 2
+                        },
+                        {
+                            label: "Rented movies",
+                            data: [87,55],
+                            backgroundColor: [
+                                '#ffab0370',
+                            ],
+                            borderColor: [
+                                '#ffa903',
+                            ],
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        </script>
     </body>
 </html>

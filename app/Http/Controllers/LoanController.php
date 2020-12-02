@@ -6,6 +6,7 @@ use App\Models\Loan;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use App\Models\User;
+use App\Models\Category;
 use Auth;
 
 class LoanController extends Controller
@@ -58,13 +59,19 @@ class LoanController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function show(Loan $loan)
+    public function show(Request $request)
     {
-        //
+        if(Auth::user()->hasRole('Admin')) {
+            $loan = Loan::find($request['id']);
+            $categories = Category::All();
+            $users = User::All();
+            $movies = Movie::All();
+            return view ('loans.index', compact('loan','categories', 'users', 'movies'));
+        } 
     }
 
     /**
