@@ -35,24 +35,19 @@
                 </a>
 
                 <div class="nav__list">
-                    <a href="#" class="nav__link active">
+                    <a href="{{ route('dashboard') }}" class="nav__link">
                         <i class='bx bx-home nav__icon'></i>
                         <span class="nav__name">Dashboard</span>
                     </a>
 
-                    <a href="#" class="nav__link">
-                        <i class='bx bx-user nav__icon'></i>
-                        <span class="nav__name">Profile</span>
-                    </a>
-
-                    <a href="#" class="nav__link">
+                    <a href="{{ route('movies') }}" class="nav__link">
                         <i class='bx bx-film nav__icon'></i>
-                        <span class="nav__name">Movies</span>
+                        <span class="nav__name">New movies</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="{{ route('loans') }}" class="nav__link active">
                         <i class='bx bx-folder-plus nav__icon'></i>
-                        <span class="nav__name">Rented movies</span>
+                        <span class="nav__name">My movies</span>
                     </a>
                 </div>
             </div>
@@ -83,10 +78,10 @@
                 @foreach($loans as $loan)
                 <div class="card mt-4 card_mv">
                     <div class="row">
-                        <div class="col-md-4">
-                            <img src="img/{{ $loan->movie->cover }}" class="img-fluid i_mov">
+                        <div class="col-4">
+                            <img src="img/{{ $loan->movie->cover }}" class="i_mov">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-8">
                             <h5 class="title_movie mt-2">{{ $loan->movie->title }}</h5>
                             <p class="classification_movie inf_m">{{ $loan->movie->classification }}</p>
                             <p class="minutes_movie inf_m">{{ $loan->movie->minutes }}</p>

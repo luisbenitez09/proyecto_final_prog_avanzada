@@ -8,7 +8,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Movies</title>
@@ -35,24 +36,19 @@
                 </a>
 
                 <div class="nav__list">
-                    <a href="#" class="nav__link active">
+                    <a href="{{ route('dashboard') }}" class="nav__link">
                         <i class='bx bx-home nav__icon'></i>
                         <span class="nav__name">Dashboard</span>
                     </a>
 
-                    <a href="#" class="nav__link">
-                        <i class='bx bx-user nav__icon'></i>
-                        <span class="nav__name">Profile</span>
-                    </a>
-
-                    <a href="#" class="nav__link">
+                    <a href="{{ route('movies') }}" class="nav__link active">
                         <i class='bx bx-film nav__icon'></i>
-                        <span class="nav__name">Movies</span>
+                        <span class="nav__name">New movies</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="{{ route('loans') }}" class="nav__link">
                         <i class='bx bx-folder-plus nav__icon'></i>
-                        <span class="nav__name">Rented movies</span>
+                        <span class="nav__name">My movies</span>
                     </a>
                 </div>
             </div>
@@ -76,16 +72,17 @@
                         Do you really need something else?</p>
                 </div>
             </div>
+
             <div class="col-md-7 info_movie">
 
                 @if(isset($movies) && count($movies)>0)
                 @foreach($movies as $movie)
                 <div class="card mt-4 card_mv">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <img src="img/{{$movie->cover}}" class="img-fluid i_mov">
+                        <div class="col-4">
+                            <img src="img/{{$movie->cover}}" class="i_mov">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-8">
                             <h5 class="title_movie mt-2">{{ $movie->title }}</h5>
                             <p class="classification_movie inf_m">{{ $movie->classification }}</p>
                             <p class="minutes_movie inf_m">{{ $movie->minutes }} min</p>
@@ -99,7 +96,6 @@
                 @endforeach
                 @endif
             </div>
-            <div class="container_movies">.</div>
         </div>
     </div>
 
