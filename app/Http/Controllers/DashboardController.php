@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Loan;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -20,15 +21,17 @@ class DashboardController extends Controller
     {
         
         if(Auth::user()->hasRole('User')) {
-            $movies = Movie::skip(0)->take(6)->get();
-            $movies2 = Movie::all()->skip(6);
+            $movies = Movie::skip(1)->take(6)->get();
+            $movies2 = Movie::skip(7)->take(4)->get();
             return view ('dashboard.user', compact('movies','movies2'));
         } else if(Auth::user()->hasRole('Admin')) {
             $movies = Movie::All();
             $categories = Category::All();
             $users = User::All();
             $loans = Loan::All();
-            return view ('dashboard.admin', compact('movies','categories','users','loans'));
+            $resultLoanNov = DB::table('loans')->whereBetween('loan_date', ['2020-11-01', '2020-11-30'])->count();
+            $resultLoanDec = DB::table('loans')->whereBetween('loan_date', ['2020-12-01', '2020-12-31'])->count();
+            return view ('dashboard.admin', compact('movies','categories','users','loans','resultLoanNov','resultLoanDec'));
         }
 
     }
