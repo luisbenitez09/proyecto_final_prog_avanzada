@@ -144,10 +144,10 @@
             var myRadarChart = new Chart(ctxR, {
                 type: 'radar',
                 data: {
-                    labels: ["Action", "Drama", "Romantic", "Kids", "Motivational", "Documental", "Comedy"],
+                    labels: ["Terror", "Comedy", "Romance", "Action", "Drama", "Aniamtion", "Adventure", "Musical", "War", "Science Fiction", "Crime", "Family"],
                     datasets: [{
                             label: "Rented movies",
-                            data: [9, 9, 9, 9, 9, 9, 9],
+                            data: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
                             backgroundColor: [
                                 'rgba(105, 0, 132, .2)',
                             ],
@@ -158,7 +158,7 @@
                         },
                         {
                             label: "Quantity",
-                            data: [10, 10, 10, 10, 10, {{ count($movies) }}, 10],
+                            data: [10, 10, 10, 10, 10, {{ count($movies) }}, 10, 10, 10, 10, 10, 10],
                             backgroundColor: [
                                 'rgba(0, 250, 220, .2)',
                             ],
@@ -181,7 +181,7 @@
                     labels: ["November", "December"],
                     datasets: [{
                             label: "New users",
-                            data: [8, 6, 4, 2],
+                            data: [8, 6, 4, 10],
                             backgroundColor: [
                                 '#0f40a95f',
                             ],

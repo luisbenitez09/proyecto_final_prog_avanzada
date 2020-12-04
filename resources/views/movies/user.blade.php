@@ -91,7 +91,7 @@
                             <p class="description_movie">{{ $movie->description }}</p>
                             <form action="{{ route('loans') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="loan_date" value="" id="loan_date">
+                            <input type="hidden" name="loan_date" value="{{ date("Y/m/d") }}" id="loan_date" onclick="addLoan()">
                                 <input type="hidden" name="movie_id" value="{{ $movie->id }}" id="movie_id">
                                 <input type="hidden" name="user_id" value="{{ $user->id }}" id="user_id">
                                 <button class="btn btn-success btn_movie" onclick="addLoan()" type="submit">Get</button>
@@ -109,12 +109,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function addLoan() {
-            var f = new Date()
-            $("#loan_date").val(f.getFullYear() + "/" + (f.getMonth()+1) + "/" + f.getDate())
+            swal("Movie rented!");
         }
-        addLoan()
     </script>
 </body>
 
