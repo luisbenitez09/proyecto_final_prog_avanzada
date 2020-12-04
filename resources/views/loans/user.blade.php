@@ -94,6 +94,7 @@
                                 @method('PUT')
                                 <input type="hidden" name="return_date" value="{{ date("Y/m/d") }}" id="return_date">
                                 <input type="hidden" name="id" value="{{ $loan->id }}" id="id">
+                                <input type="hidden" name="status" value="Returned" id="status">
                                 <button class="btn btn-success btn_movie" onclick="addLoan()" type="submit">Return</button>
                             </form>
                         </div>

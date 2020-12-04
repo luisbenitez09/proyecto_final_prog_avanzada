@@ -24,9 +24,9 @@ class LoanController extends Controller
             $users = User::All();
             return view ('loans.admin', compact('loans','movies', 'users'));
         } else if(Auth::user()->hasRole('User')) {
-            $loans = Loan::with('movie','user')->get();
             $movies = Movie::All();
             $user = Auth::user();
+            $loans = Loan::where('user_id', $user->id)->where('status', 'Borrowed')->get();
             return view ('loans.user', compact('loans','movies'));
         }
     
