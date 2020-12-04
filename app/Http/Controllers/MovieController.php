@@ -52,14 +52,12 @@ class MovieController extends Controller
     {
         if(Auth::user()->hasPermissionTo('add movies')) {
             if ($movie = Movie::create($request->all())) {
-                if ($request->hasFile('cover_file')) {
+                if ($request->hasFile('cover')) {
                     
-                    $file = $request->file('cover_file');
-                    $file_name = 'cover_movie'.$movie->id.'.'.$file->getClientOriginalExtension();
-
-                    $path = $request->file('cover_file')->storeAs(
-                        'img', $file_name
-                    );
+                    $file = $request->file('cover');
+                    $file_name = 'cover'.$movie->id.'.'.$file->getClientOriginalExtension();
+                    
+                    $path = $request->file('cover')->move(public_path('img'), $file_name);
                     $movie->cover = $file_name;
                     $movie->save();
                 }

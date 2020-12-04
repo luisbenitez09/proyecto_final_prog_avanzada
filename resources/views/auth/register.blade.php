@@ -15,7 +15,7 @@
 <body>
     <div class="row">
         <div class="col-6 poster">
-            <img src="img/img-register.png" alt="BlockBuster2" class="img-login">
+            <img src="img/img-login.png" alt="BlockBuster2" class="img-login">
         </div>
         <div class="col-lg-5 form-side">
             <form class="auth-form-regsiter" method="POST" action="{{ route('register') }}">

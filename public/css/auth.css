@@ -6,7 +6,10 @@
 
 body {
     font-family: 'Montserrat'!important;
-    background-color: #04102f!important;
+    background-image: url('../img/img-background-login.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 h1,h2,h3,h4,h5,h6,p,span,label {
@@ -51,7 +54,7 @@ h1,h2,h3,h4,h5,h6,p,span,label {
 
 /* -------------------------    MAIN SCREEN     --------------------------*/
 #main-screen {
-    background-image: url('../img/main-background.png');
+    background-image: url('../img/img-background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

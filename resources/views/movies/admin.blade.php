@@ -40,7 +40,7 @@
                     </button>
                 </div>
 
-                <form method="post" action="{{ url('movies') }}" onsubmit="">
+                <form method="post" action="{{ url('movies') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="modal-body">
@@ -276,7 +276,7 @@
 				<div class="form-group">
 				    <label for="cover">Cover</label>
 				    <div class="input-group mb-3">
-					  <input type="file" class="form-control" name="cover_file" >
+					  <input type="file" class="form-control" name="cover" >
 					</div>
 				</div>
 
