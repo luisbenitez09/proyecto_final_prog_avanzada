@@ -6,12 +6,111 @@
 		"movie_id": 1,
 		"user_id": 1
     },
-    
     {
 		"loan_date": "2020-11-05",
 		"return_date": "2020-11-05",
 		"status": "Borrowed",
 		"movie_id": 3,
 		"user_id": 1
+	},
+	{
+		"loan_date": "2020-11-04",
+		"return_date": "2020-11-29",
+		"status": "Returned",
+		"movie_id": 12,
+		"user_id": 5
+    },
+    {
+		"loan_date": "2020-11-10",
+		"return_date": "2020-11-15",
+		"status": "Borrowed",
+		"movie_id": 10,
+		"user_id": 4
+	},
+	{
+		"loan_date": "2020-12-01",
+		"return_date": "2020-12-02",
+		"status": "Returned",
+		"movie_id": 10,
+		"user_id": 6
+    },
+    {
+		"loan_date": "2020-12-03",
+		"return_date": "2020-12-04",
+		"status": "Borrowed",
+		"movie_id": 3,
+		"user_id": 1
+	},
+	{
+		"loan_date": "2020-12-01",
+		"return_date": "2020-12-02",
+		"status": "Returned",
+		"movie_id": 20,
+		"user_id": 9
+    },
+    {
+		"loan_date": "2020-12-04",
+		"return_date": "2020-12-05",
+		"status": "Borrowed",
+		"movie_id": 6,
+		"user_id": 7
+	},
+	{
+		"loan_date": "2020-10-22",
+		"return_date": "2020-12-24",
+		"status": "Returned",
+		"movie_id": 4,
+		"user_id": 3
+    },
+    {
+		"loan_date": "2020-10-05",
+		"return_date": "2020-10-15",
+		"status": "Borrowed",
+		"movie_id": 9,
+		"user_id": 11
+	},
+	{
+		"loan_date": "2020-10-12",
+		"return_date": "2020-10-15",
+		"status": "Returned",
+		"movie_id": 15,
+		"user_id": 12
+    },
+    {
+		"loan_date": "2020-10-20",
+		"return_date": "2020-10-30",
+		"status": "Borrowed",
+		"movie_id": 10,
+		"user_id": 8
+	},
+	{
+		"loan_date": "2020-09-07",
+		"return_date": "2020-08-11",
+		"status": "Returned",
+		"movie_id": 15,
+		"user_id": 9
+    },
+    
+    {
+		"loan_date": "2020-09-05",
+		"return_date": "2020-09-15",
+		"status": "Borrowed",
+		"movie_id": 19,
+		"user_id": 10
+	},
+	{
+		"loan_date": "2020-09-06",
+		"return_date": "2020-09-17",
+		"status": "Returned",
+		"movie_id": 14,
+		"user_id": 3
+    },
+    
+    {
+		"loan_date": "2020-09-18",
+		"return_date": "2020-09-24",
+		"status": "Borrowed",
+		"movie_id": 5,
+		"user_id": 3
 	}
 ]
