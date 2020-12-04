@@ -27,6 +27,13 @@
 		"movie_id": 10,
 		"user_id": 4
 	},
+    {
+		"loan_date": "2020-11-14",
+		"return_date": "2020-11-17",
+		"status": "Borrowed",
+		"movie_id": 4,
+		"user_id": 5
+	},
 	{
 		"loan_date": "2020-12-01",
 		"return_date": "2020-12-02",
@@ -49,6 +56,20 @@
 		"user_id": 9
     },
     {
+		"loan_date": "2020-12-03",
+		"return_date": "2020-12-06",
+		"status": "Borrowed",
+		"movie_id": 6,
+		"user_id": 7
+	},
+	{
+		"loan_date": "2020-12-04",
+		"return_date": "2020-12-05",
+		"status": "Borrowed",
+		"movie_id": 7,
+		"user_id": 10
+	},
+	{
 		"loan_date": "2020-12-04",
 		"return_date": "2020-12-05",
 		"status": "Borrowed",
@@ -105,12 +126,32 @@
 		"movie_id": 14,
 		"user_id": 3
     },
-    
     {
 		"loan_date": "2020-09-18",
 		"return_date": "2020-09-24",
 		"status": "Borrowed",
 		"movie_id": 5,
 		"user_id": 3
+	},
+	{
+		"loan_date": "2020-09-16",
+		"return_date": "2020-09-18",
+		"status": "Borrowed",
+		"movie_id": 2,
+		"user_id": 4
+	},
+	{
+		"loan_date": "2020-09-21",
+		"return_date": "2020-09-26",
+		"status": "Borrowed",
+		"movie_id": 12,
+		"user_id": 8
+	},
+	{
+		"loan_date": "2020-09-19",
+		"return_date": "2020-09-25",
+		"status": "Borrowed",
+		"movie_id": 5,
+		"user_id": 9
 	}
 ]
