@@ -20,12 +20,8 @@ class DashboardController extends Controller
     public function index()
     {
         
-        if(Auth::user()->hasRole('User')) {
-            $movies = Movie::skip(1)->take(6)->get();
-            $movies2 = Movie::skip(7)->take(4)->get();
-            $user = Auth::user();
-            return view ('dashboard.user', compact('movies','movies2', 'user'));
-        } else if(Auth::user()->hasRole('Admin')) {
+        
+        if(Auth::user()->hasRole('Admin')) {
             $movies = Movie::All();
             $categories = Category::All();
             $users = User::All();
@@ -63,6 +59,11 @@ class DashboardController extends Controller
             $resultDec = DB::table('loans')->whereBetween('loan_date', ['2020-12-01', '2020-12-31'])->count();
 
             return view ('dashboard.admin', compact('movies','categories','users','loans','resultSep','resultOct', 'resultNov', 'resultDec', 'terror', 'comedy', 'romance', 'action', 'drama', 'animation', 'adventure', 'musical', 'war', 'science', 'crime', 'family', 'terrorRented', 'comedyRented', 'romanceRented', 'actionRented', 'dramaRented', 'animationRented', 'adventureRented', 'musicalRented', 'warRented', 'scienceRented', 'crimeRented', 'familyRented'));
+        } else {
+            $movies = Movie::skip(1)->take(6)->get();
+            $movies2 = Movie::skip(7)->take(4)->get();
+            $user = Auth::user();
+            return view ('dashboard.user', compact('movies','movies2', 'user'));
         }
 
     }

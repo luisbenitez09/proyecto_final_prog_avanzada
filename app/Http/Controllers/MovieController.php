@@ -18,18 +18,18 @@ class MovieController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->hasrole('User')) {
-            $movies = Movie::with('loan')->get();
-            $user = Auth::user();
-            return view ('movies.user', compact('movies', 'user'));
-        }
-        else if(Auth::user()->hasRole('Admin')) {
+        if(Auth::user()->hasRole('Admin')) {
             $movies = Movie::with('category')->get();
             $categories = Category::All();
             //$users = User::All();
             //$loans = Loan::All();
             return view ('movies.admin', compact('movies','categories'));
-        }   
+        }  else {
+            $movies = Movie::with('loan')->get();
+            $user = Auth::user();
+            return view ('movies.user', compact('movies', 'user'));
+        
+        } 
     }
 
     /**

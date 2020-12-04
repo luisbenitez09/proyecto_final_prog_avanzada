@@ -23,7 +23,7 @@ class LoanController extends Controller
             $movies = Movie::All();
             $users = User::All();
             return view ('loans.admin', compact('loans','movies', 'users'));
-        } else if(Auth::user()->hasRole('User')) {
+        } else {
             $movies = Movie::All();
             $user = Auth::user();
             $loans = Loan::where('user_id', $user->id)->where('status', 'Borrowed')->get();
@@ -50,12 +50,12 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::user()->hasPermissionTo('add loans')) {
+        
             if($loan = Loan::create($request->all())) {
                 return redirect()->back()->with('success','Loan created successfully');
             }
             return redirect()->back()->with('error','We couldnt create the new loan');
-        }
+        
     }
 
     /**
