@@ -67,6 +67,7 @@
                 <div class="card bg-dark text-white">
                     <img class="card-img img_cards" src="https://mamuky.com/wp-content/uploads/2020/04/Screenshot_2020-04-11-Ver-La-Dama-y-el-Vagabundo-2019-Disney.png" alt="Card image">
                     <div class="card-img-overlay">
+                    <h1 class="card-title">Welcome {{ $user->name }}</h1>
                     </div>
                 </div>
             </div>

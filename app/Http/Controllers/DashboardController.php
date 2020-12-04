@@ -23,7 +23,8 @@ class DashboardController extends Controller
         if(Auth::user()->hasRole('User')) {
             $movies = Movie::skip(1)->take(6)->get();
             $movies2 = Movie::skip(7)->take(4)->get();
-            return view ('dashboard.user', compact('movies','movies2'));
+            $user = Auth::user();
+            return view ('dashboard.user', compact('movies','movies2', 'user'));
         } else if(Auth::user()->hasRole('Admin')) {
             $movies = Movie::All();
             $categories = Category::All();
