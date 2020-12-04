@@ -181,7 +181,7 @@
                     labels: ["November", "December"],
                     datasets: [{
                             label: "New users",
-                            data: [87,76],
+                            data: [8, 6, 4, 2],
                             backgroundColor: [
                                 '#0f40a95f',
                             ],
@@ -192,7 +192,7 @@
                         },
                         {
                             label: "Rented movies",
-                            data: [87,55],
+                            data: [{{ $resultLoanSep }}, {{ $resultLoanOct }}, {{ $resultLoanNov }}, {{ $resultLoanDec }}],
                             backgroundColor: [
                                 '#ffab0370',
                             ],

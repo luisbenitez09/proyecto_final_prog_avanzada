@@ -29,9 +29,11 @@ class DashboardController extends Controller
             $categories = Category::All();
             $users = User::All();
             $loans = Loan::All();
+            $resultLoanSep = DB::table('loans')->whereBetween('loan_date', ['2020-09-01', '2020-09-30'])->count();
+            $resultLoanOct = DB::table('loans')->whereBetween('loan_date', ['2020-10-01', '2020-10-31'])->count();
             $resultLoanNov = DB::table('loans')->whereBetween('loan_date', ['2020-11-01', '2020-11-30'])->count();
             $resultLoanDec = DB::table('loans')->whereBetween('loan_date', ['2020-12-01', '2020-12-31'])->count();
-            return view ('dashboard.admin', compact('movies','categories','users','loans','resultLoanNov','resultLoanDec'));
+            return view ('dashboard.admin', compact('movies','categories','users','loans','resultLoanNov','resultLoanDec', 'resultLoanSep', 'resultLoanOct'));
         }
 
     }

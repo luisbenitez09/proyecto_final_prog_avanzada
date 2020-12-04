@@ -88,18 +88,38 @@
         </div>
 
         <div class="row">
-        @if(isset($movies2) && count($movies2)>0)
-                @foreach($movies2 as $movie)
             <div class="col-lg-6 collg-6">
-            <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://s03.s3c.es/imag/_v0/600x327/e/d/d/interestelar-coronavirus-secuela.jpg" alt="Card image">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="img/john-h.png" alt="Card image">
                     <div class="card-img-overlay img-overlay">
-                        <h4>{{ $movie->title }}</h4>
+                        <h4>John Wick 3 Parabellum</h4>
                     </div>
                 </div>
             </div>
-            @endforeach
-            @endif
+            <div class="col-lg-6 collg-6">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="img/mile22.png" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Mile 22</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 collg-6">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="img/mirror.png" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Black Mirror</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 collg-6">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="img/greenland.png" alt="Card image">
+                    <div class="card-img-overlay img-overlay">
+                        <h4>Greenland</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
