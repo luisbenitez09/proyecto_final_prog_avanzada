@@ -24,9 +24,9 @@ class LoanController extends Controller
             $users = User::All();
             return view ('loans.admin', compact('loans','movies', 'users'));
         } else if(Auth::user()->hasRole('User')) {
+            $loans = Loan::with('movie','user')->get();
             $movies = Movie::All();
             $user = Auth::user();
-            $loans = Loan::with('movie','user')->where('user_id' == $user->id);
             return view ('loans.user', compact('loans','movies'));
         }
     
@@ -95,7 +95,7 @@ class LoanController extends Controller
      */
     public function update(Request $request, Loan $loan)
     {
-        if(Auth::user()->hasRole('Admin')) {
+        
             $loan = Loan::find($request['id']);
             if ($loan) {
                 if ($loan->update($request->all())) {
@@ -103,7 +103,7 @@ class LoanController extends Controller
                 }
             }
             return redirect()->back()->with('error','No se pudo actualizar el registro correctamente');;
-        }
+        
     }
 
     /**

@@ -89,7 +89,13 @@
                             <p class="category_movie inf_m">{{ $loan->movie->category->name }}</p>
                             <p class="loan_movie inf_m">Loan date: {{ $loan->loan_date }}</p>
                             <p class="description_movie">{{ $loan->movie->description }}</p>
-                            <button class="btn btn-success btn_movie ">Returned</button>
+                            <form action="{{ route('loans') }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="return_date" value="{{ date("Y/m/d") }}" id="return_date">
+                                <input type="hidden" name="id" value="{{ $loan->id }}" id="id">
+                                <button class="btn btn-success btn_movie" onclick="addLoan()" type="submit">Return</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -101,6 +107,12 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function addLoan() {
+            swal("Movie returned!");
+        }
+    </script>
 </body>
 
 </html>

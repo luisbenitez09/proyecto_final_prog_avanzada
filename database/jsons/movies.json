@@ -82,7 +82,7 @@
 		"classification": "B",
 		"minutes": 143,
 		"year": 2019,
-		"cover": "coco.png",
+		"cover": "wick.png",
 		"cover2": "john-h.png",
 		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 4
@@ -93,7 +93,7 @@
 		"classification": "B-15",
 		"minutes": 100,
 		"year": 2018,
-		"cover": "interestelar.png",
+		"cover": "mile22v.png",
 		"cover2": "mile22.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
@@ -104,7 +104,7 @@
 		"classification": "B-15",
 		"minutes": 160,
 		"year": 2011,
-		"cover": "american.png",
+		"cover": "black.png",
 		"cover2": "mirror.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 10
@@ -115,7 +115,7 @@
 		"classification": "B15",
 		"minutes": 120,
 		"year": 2020,
-		"cover": "conjuring.png",
+		"cover": "greenland-v.png",
 		"cover2": "greenland.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
