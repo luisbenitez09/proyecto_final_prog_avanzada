@@ -144,10 +144,10 @@
             var myRadarChart = new Chart(ctxR, {
                 type: 'radar',
                 data: {
-                    labels: ["Terror", "Comedy", "Romance", "Action", "Drama", "Aniamtion", "Adventure", "Musical", "War", "Science Fiction", "Crime", "Family"],
+                    labels: ["Terror", "Comedy", "Romance", "Action", "Drama", "Animation", "Adventure", "Musical", "War", "Science Fiction", "Crime", "Family"],
                     datasets: [{
                             label: "Rented movies",
-                            data: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+                            data: [{{ $terrorRented }}, {{ $comedyRented }}, {{ $romanceRented }}, {{ $actionRented }}, {{ $dramaRented }}, {{ $animationRented }}, {{ $adventureRented }}, {{ $musicalRented }}, {{ $warRented }}, {{ $scienceRented }}, {{ $crimeRented }}, {{ $familyRented }}],
                             backgroundColor: [
                                 'rgba(105, 0, 132, .2)',
                             ],
@@ -158,7 +158,7 @@
                         },
                         {
                             label: "Quantity",
-                            data: [10, 10, 10, 10, 10, {{ count($movies) }}, 10, 10, 10, 10, 10, 10],
+                            data: [{{ $terror }}, {{ $comedy }}, {{ $romance }}, {{ $action }}, {{ $drama }}, {{ $animation }}, {{ $adventure }}, {{ $musical }}, {{ $war }}, {{ $science }}, {{ $crime }}, {{ $family }}],
                             backgroundColor: [
                                 'rgba(0, 250, 220, .2)',
                             ],
@@ -178,21 +178,11 @@
             var myLineChart = new Chart(ctxL, {
                 type: 'line',
                 data: {
-                    labels: ["November", "December"],
-                    datasets: [{
-                            label: "New users",
-                            data: [8, 6, 4, 10],
-                            backgroundColor: [
-                                '#0f40a95f',
-                            ],
-                            borderColor: [
-                                '#0f3fa9',
-                            ],
-                            borderWidth: 2
-                        },
+                    labels: ["September", "October", "November", "December"],
+                    datasets: [
                         {
                             label: "Rented movies",
-                            data: [{{ $resultLoanSep }}, {{ $resultLoanOct }}, {{ $resultLoanNov }}, {{ $resultLoanDec }}],
+                            data: ["{{ $resultSep }}","{{ $resultOct }}","{{ $resultNov }}","{{ $resultDec }}"],
                             backgroundColor: [
                                 '#ffab0370',
                             ],
