@@ -24,6 +24,7 @@ class MovieSeeder extends Seeder
             $movie->minutes = $movieA['minutes'];
             $movie->year = $movieA['year'];
             $movie->cover = $movieA['cover'];
+            $movie->cover2 = $movieA['cover2'];
             $movie->trailer = $movieA['trailer'];
             $movie->category_id = $movieA['category_id'];
             $movie->save();

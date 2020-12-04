@@ -23,6 +23,7 @@ class CreateMoviesTable extends Migration
             $table->integer('year')->default(0);
 
             $table->string('cover')->default('movie.png');
+            $table->string('cover2')->default('movie.png');
             $table->string('trailer')->nullable();
 
             $table->unsignedBigInteger('category_id');

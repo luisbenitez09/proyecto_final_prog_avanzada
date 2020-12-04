@@ -6,6 +6,7 @@
 		"minutes": 110,
 		"year": 2019,
 		"cover": "dama.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=F_oZlPMG-Lc",
 		"category_id": 12
 	},
@@ -16,6 +17,7 @@
 		"minutes": 122,
 		"year": 2019,
 		"cover": "joker.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=t433PEQGErc",
 		"category_id": 5
 	},
@@ -26,6 +28,7 @@
 		"minutes": 118,
 		"year": 2019,
 		"cover": "lion.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=BfSAvH2fGkE",
 		"category_id": 7
 	},
@@ -36,6 +39,7 @@
 		"minutes": 119,
 		"year": 2019,
 		"cover": "1917.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=gZjQROMAh_s",
 		"category_id": 9
 	},
@@ -46,6 +50,7 @@
 		"minutes": 120,
 		"year": 2016,
 		"cover": "youmeher.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=cQsBkoShglM",
 		"category_id": 3
 	},
@@ -56,6 +61,7 @@
 		"minutes": 160,
 		"year": 2018,
 		"cover": "infinity.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=QwievZ1Tx-8",
 		"category_id": 4
 	},
@@ -66,8 +72,53 @@
 		"minutes": 128,
 		"year": 2019,
 		"cover": "aladin.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 12
+	},
+	{
+		"title": "John Wick 3 Parabellum",
+		"description": "Legendary hit man John Wick is chased through the streets of New York. Some mercenaries are looking for..",
+		"classification": "B",
+		"minutes": 143,
+		"year": 2019,
+		"cover": "coco.png",
+		"cover2": "john-h.png",
+		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
+		"category_id": 4
+	},
+	{
+		"title": "Mile 22",
+		"description": "An elite US intelligence officer, aided by a top-secret tactical command unit..",
+		"classification": "B-15",
+		"minutes": 100,
+		"year": 2018,
+		"cover": "interestelar.png",
+		"cover2": "mile22.png",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 4
+	},
+	{
+		"title": "Black Mirror",
+		"description": "The dark side of the technological age in which we live: the paranoia of being watched as in a panopticon..",
+		"classification": "B-15",
+		"minutes": 160,
+		"year": 2011,
+		"cover": "american.png",
+		"cover2": "mirror.png",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 10
+	},
+	{
+		"title": "Greenland",
+		"description": "A family embarks on a dangerous journey as a comet is launched towards Earth..",
+		"classification": "B15",
+		"minutes": 120,
+		"year": 2020,
+		"cover": "conjuring.png",
+		"cover2": "greenland.png",
+		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
+		"category_id": 4
 	},
 	{
 		"title": "Coco",
@@ -76,6 +127,7 @@
 		"minutes": 109,
 		"year": 2017,
 		"cover": "coco.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 6
 	},
@@ -86,6 +138,7 @@
 		"minutes": 169,
 		"year": 2014,
 		"cover": "interestelar.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 10
 	},
@@ -96,6 +149,7 @@
 		"minutes": 134,
 		"year": 2014,
 		"cover": "american.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 9
 	},
@@ -106,6 +160,7 @@
 		"minutes": 112,
 		"year": 2013,
 		"cover": "conjuring.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 1
 	},
@@ -116,6 +171,7 @@
 		"minutes": 100,
 		"year": 2014,
 		"cover": "anabelle.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 1
 	},
@@ -126,6 +182,7 @@
 		"minutes": 128,
 		"year": 2016,
 		"cover": "lalaland.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 8
 	},
@@ -136,6 +193,7 @@
 		"minutes": 125,
 		"year": 2018,
 		"cover": "incredibles.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 6
 	},
@@ -146,6 +204,7 @@
 		"minutes": 108,
 		"year": 2019,
 		"cover": "extremely.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 11
 	},
@@ -156,6 +215,7 @@
 		"minutes": 100,
 		"year": 2019,
 		"cover": "toystory.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 6
 	},
@@ -166,6 +226,7 @@
 		"minutes": 132,
 		"year": 2019,
 		"cover": "parasite.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 5
 	},
@@ -176,6 +237,7 @@
 		"minutes": 107,
 		"year": 2009,
 		"cover": "fast.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
 	},
@@ -186,6 +248,7 @@
 		"minutes": 120,
 		"year": 2017,
 		"cover": "justice.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
 	},
@@ -196,6 +259,7 @@
 		"minutes": 132,
 		"year": 2019,
 		"cover": "shazam.png",
+		"cover2": "movie.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 2
 	}
