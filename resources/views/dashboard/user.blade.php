@@ -77,7 +77,7 @@
                 @foreach($movies as $movie)
             <div class="col-md-2 colmd-2">
             <div class="card bg-dark text-white">
-                    <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/5c549996c2ff615be28e2321/1549437429475-ARMJU14WF4AT3E1KN5X9/ke17ZwdGBToddI8pDm48kIBS5viOy0HP5EoJT3bHds97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeFSGbkY2-XgWhjRuERUQvFC6XUmZEvTwtms8Q3eFwmTwzgQ1HYBeOI75vUrs92jaw/YMH02.jpg?format=1500w" alt="Card image">
+            <img class="card-img" src="img/{{ $movie->cover }}" alt="Card image">
                     <div class="card-img-overlay img-overlay">
                         <h4>{{ $movie->title }}</h4>
                     </div>

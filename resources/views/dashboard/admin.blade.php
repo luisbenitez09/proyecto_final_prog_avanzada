@@ -147,7 +147,7 @@
                     labels: ["Action", "Drama", "Romantic", "Kids", "Motivational", "Documental", "Comedy"],
                     datasets: [{
                             label: "Rented movies",
-                            data: [6, 5, 9, 8, 5, 5, 4],
+                            data: [9, 9, 9, 9, 9, 9, 9],
                             backgroundColor: [
                                 'rgba(105, 0, 132, .2)',
                             ],
@@ -158,7 +158,7 @@
                         },
                         {
                             label: "Quantity",
-                            data: [2, 4, 4, 1, 9, 2, 10],
+                            data: [10, 10, 10, 10, 10, {{ count($movies) }}, 10],
                             backgroundColor: [
                                 'rgba(0, 250, 220, .2)',
                             ],

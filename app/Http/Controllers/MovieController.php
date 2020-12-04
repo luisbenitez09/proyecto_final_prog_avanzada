@@ -19,8 +19,9 @@ class MovieController extends Controller
     public function index()
     {
         if(Auth::user()->hasrole('User')) {
-            $movies = Movie::with('loan')->get();;
-            return view ('movies.user', compact('movies'));
+            $movies = Movie::with('loan')->get();
+            $user = Auth::user();
+            return view ('movies.user', compact('movies', 'user'));
         }
         else if(Auth::user()->hasRole('Admin')) {
             $movies = Movie::with('category')->get();

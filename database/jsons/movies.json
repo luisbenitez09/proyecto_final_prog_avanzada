@@ -5,7 +5,7 @@
 		"classification": "AA",
 		"minutes": 110,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "dama.png",
 		"trailer": "https://www.youtube.com/watch?v=F_oZlPMG-Lc",
 		"category_id": 12
 	},
@@ -15,7 +15,7 @@
 		"classification": "B15",
 		"minutes": 122,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "joker.png",
 		"trailer": "https://www.youtube.com/watch?v=t433PEQGErc",
 		"category_id": 5
 	},
@@ -25,7 +25,7 @@
 		"classification": "B15",
 		"minutes": 118,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "lion.png",
 		"trailer": "https://www.youtube.com/watch?v=BfSAvH2fGkE",
 		"category_id": 7
 	},
@@ -35,7 +35,7 @@
 		"classification": "B",
 		"minutes": 119,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "1917.png",
 		"trailer": "https://www.youtube.com/watch?v=gZjQROMAh_s",
 		"category_id": 9
 	},
@@ -45,7 +45,7 @@
 		"classification": "B15",
 		"minutes": 120,
 		"year": 2016,
-		"cover": "movies.jpg",
+		"cover": "youmeher.png",
 		"trailer": "https://www.youtube.com/watch?v=cQsBkoShglM",
 		"category_id": 3
 	},
@@ -55,7 +55,7 @@
 		"classification": "B",
 		"minutes": 160,
 		"year": 2018,
-		"cover": "movies.jpg",
+		"cover": "infinity.png",
 		"trailer": "https://www.youtube.com/watch?v=QwievZ1Tx-8",
 		"category_id": 4
 	},
@@ -65,7 +65,7 @@
 		"classification": "AA",
 		"minutes": 128,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "aladin.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 12
 	},
@@ -75,7 +75,7 @@
 		"classification": "AA",
 		"minutes": 109,
 		"year": 2017,
-		"cover": "movies.jpg",
+		"cover": "coco.png",
 		"trailer": "https://www.youtube.com/watch?v=6JLC7TJ56qU",
 		"category_id": 6
 	},
@@ -85,7 +85,7 @@
 		"classification": "B",
 		"minutes": 169,
 		"year": 2014,
-		"cover": "movies.jpg",
+		"cover": "interestelar.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 10
 	},
@@ -95,7 +95,7 @@
 		"classification": "B-15",
 		"minutes": 134,
 		"year": 2014,
-		"cover": "movies.jpg",
+		"cover": "american.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 9
 	},
@@ -105,7 +105,7 @@
 		"classification": "B15",
 		"minutes": 112,
 		"year": 2013,
-		"cover": "movies.jpg",
+		"cover": "conjuring.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 1
 	},
@@ -115,7 +115,7 @@
 		"classification": "B15",
 		"minutes": 100,
 		"year": 2014,
-		"cover": "movies.jpg",
+		"cover": "anabelle.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 1
 	},
@@ -125,7 +125,7 @@
 		"classification": "B",
 		"minutes": 128,
 		"year": 2016,
-		"cover": "movies.jpg",
+		"cover": "lalaland.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 8
 	},
@@ -135,7 +135,7 @@
 		"classification": "AA",
 		"minutes": 125,
 		"year": 2018,
-		"cover": "movies.jpg",
+		"cover": "incredibles.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 6
 	},
@@ -145,7 +145,7 @@
 		"classification": "B15",
 		"minutes": 108,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "extremely.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 11
 	},
@@ -155,7 +155,7 @@
 		"classification": "AA",
 		"minutes": 100,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "toystory.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 6
 	},
@@ -165,7 +165,7 @@
 		"classification": "B15",
 		"minutes": 132,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "parasite.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 5
 	},
@@ -175,7 +175,7 @@
 		"classification": "B",
 		"minutes": 107,
 		"year": 2009,
-		"cover": "movies.jpg",
+		"cover": "fast.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
 	},
@@ -185,7 +185,7 @@
 		"classification": "B",
 		"minutes": 120,
 		"year": 2017,
-		"cover": "movies.jpg",
+		"cover": "justice.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 4
 	},
@@ -195,7 +195,7 @@
 		"classification": "B",
 		"minutes": 132,
 		"year": 2019,
-		"cover": "movies.jpg",
+		"cover": "shazam.png",
 		"trailer": "https://www.youtube.com/watch?v=foyufD52aog",
 		"category_id": 2
 	}
